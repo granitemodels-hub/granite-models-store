@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Granite Models</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--gold:#ffaa00;--dark-bg:#0a0a0f;--dark-surface:#111118;--dark-card:#1a1a25;--dark-border:#2a2a3a;--text-primary:#e8e8f0;--text-secondary:#8888aa;--green:#00ff88;--purple:#aa44ff;--cyan:#00ddff;}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:var(--dark-bg);color:var(--text-primary);font-family:'Rajdhani',sans-serif;}
+        body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(rgba(255,170,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,170,0,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:0;}
+        .container{max-width:900px;margin:0 auto;padding:40px 30px;position:relative;z-index:1;}
+        .back{display:inline-block;padding:12px 28px;background:var(--gold);color:#000;font-size:14px;font-weight:700;border-radius:10px;text-decoration:none;transition:all 0.2s;margin-bottom:25px;}
+        .back:hover{background:#fff;transform:scale(1.05);}
+        .product-detail{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:16px;padding:40px;margin-top:10px;}
+        .cat-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.75em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+        h1{font-family:'Orbitron',monospace;color:var(--gold);font-size:1.8em;letter-spacing:2px;margin-bottom:5px;}
+        .port-info{color:var(--text-secondary);font-size:0.85em;font-family:monospace;margin-bottom:20px;}
+        .desc{color:var(--text-secondary);font-size:1.1em;line-height:1.7;margin-bottom:30px;}
+        .features-list{list-style:none;margin-bottom:30px;}
+        .features-list li{padding:10px 0;border-bottom:1px solid rgba(42,42,58,0.5);color:var(--text-primary);font-size:1em;}
+        .features-list li::before{content:'✅ ';}
+        .price-section{display:flex;justify-content:space-between;align-items:center;padding-top:25px;border-top:1px solid var(--dark-border);}
+        .price{font-family:'Orbitron',monospace;font-size:2.5em;color:var(--gold);}
+        .buy-btn{padding:15px 40px;border:2px solid var(--gold);background:rgba(255,170,0,0.15);color:var(--gold);border-radius:10px;font-family:'Orbitron',monospace;font-weight:700;cursor:pointer;transition:all 0.3s;font-size:1.1em;letter-spacing:2px;}
+        .buy-btn:hover{background:var(--gold);color:var(--dark-bg);box-shadow:0 0 30px rgba(255,170,0,0.4);}
+        .video-section{margin:25px 0;background:var(--dark-surface);border:1px solid var(--dark-border);border-radius:12px;overflow:hidden;}
+        .video-header{padding:15px 20px;border-bottom:1px solid var(--dark-border);display:flex;justify-content:space-between;align-items:center;}
+        .video-header h3{font-family:'Orbitron',monospace;color:var(--green);font-size:0.85em;letter-spacing:2px;}
+        .video-header .size{color:var(--text-secondary);font-size:0.8em;}
+        .video-section video{width:100%;display:block;background:#000;}
+        .no-video{padding:40px;text-align:center;color:var(--text-secondary);font-size:1em;}
+        .live-demo-btn{display:inline-block;margin-top:15px;padding:10px 25px;border:1px solid var(--cyan);background:rgba(0,221,255,0.1);color:var(--cyan);border-radius:8px;text-decoration:none;font-weight:700;transition:all 0.2s;}
+        .live-demo-btn:hover{background:var(--cyan);color:#000;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">&#8592; Back to Store</a>
+        <div class="product-detail">
+            {% set cc = cat_info.get('color', '#ffaa00') %}
+            <div class="cat-badge" style="background:{{cc}}22;color:{{cc}};border:1px solid {{cc}}44">{{ cat_info.get('icon','') }} {{ cat_info.get('name','') }}</div>
+            <h1>{{ product.name }}</h1>
+            <div class="port-info">System Port: {{ product.port }} &middot; Flask Application</div>
+            <div class="desc">{{ product.desc }}</div>
+            {% if video %}
+            <div class="video-section">
+                <div class="video-header">
+                    <h3>&#9654; DEMO VIDEO</h3>
+                    <span class="size">{{ video.size_mb }} MB</span>
+                </div>
+                <video controls preload="metadata">
+                    <source src="/demo-video/{{ video.filename }}" type="video/webm">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+            {% else %}
+            <div class="video-section">
+                <div class="no-video">Demo video coming soon</div>
+            </div>
+            {% endif %}
+
+
+
+            <button class="live-demo-btn" style="border-color:var(--gold);color:var(--gold);cursor:pointer;background:rgba(255,170,0,0.1);font-family:inherit;font-size:1em;" onclick="buyNow()" onmouseover="this.style.background='var(--gold)';this.style.color='#000'" onmouseout="this.style.background='rgba(255,170,0,0.1)';this.style.color='var(--gold)'">&#128176; CHECKOUT</button>
+
+            <ul class="features-list" style="margin-top:25px;">
+                {% for feat in product.features %}
+                <li>{{ feat }}</li>
+                {% endfor %}
+            </ul>
+            <div class="price-section">
+                <div class="price">${{ product.price }}</div>
+                <button class="buy-btn" onclick="buyNow()">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    async function buyNow(){
+        const res=await fetch('/api/checkout/{{ product_id }}',{method:'POST'});
+        const data=await res.json();
+        if(data.url) window.location=data.url;
+        else if(data.error) alert('Error: '+data.error);
+    }
+    </script>
+</body>
+</html>
+
+
