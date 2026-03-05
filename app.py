@@ -171,6 +171,20 @@ def roadmap():
 def contact():
     return render_template('contact.html', social=SOCIAL)
 
+@app.route('/robots.txt')
+def robots():
+    return app.send_static_file('robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    pages = ['/', '/story', '/systems', '/process', '/roadmap', '/contact']
+    pages += [f'/project/{slug}' for slug in PROJECTS]
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for p in pages:
+        xml += f'  <url><loc>https://granitemodels.store{p}</loc></url>\n'
+    xml += '</urlset>'
+    return xml, 200, {'Content-Type': 'application/xml'}
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5055))
     print(f'GRANITE MODELS v5 — http://127.0.0.1:{port}')
