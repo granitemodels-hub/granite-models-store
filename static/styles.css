@@ -374,6 +374,54 @@ img { max-width: 100%; display: block; }
 .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
 .filter-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
 
+/* ═══ ROADMAP PIPELINE ═══ */
+#roadmap-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 40px;
+}
+.roadmap-wrapper {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+}
+.roadmap-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+.stage {
+  position: absolute;
+  padding: 10px 14px;
+  background: rgba(10,10,15,0.85);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid rgba(212,167,69,0.4);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.stage--gold { color: #d4a745; border-color: rgba(212,167,69,0.6); font-weight: 700; }
+.stage1 { top: 78%; left: 8%; }
+.stage2 { top: 63%; left: 24%; }
+.stage3 { top: 48%; left: 40%; }
+.stage4 { top: 38%; left: 52%; }
+.stage5 { top: 32%; left: 64%; }
+.stage6 { top: 28%; left: 74%; }
+.stage7 { top: 23%; left: 83%; }
+.stage8 { top: 18%; left: 88%; }
+@media (max-width: 768px) {
+  .stage { font-size: 10px; padding: 6px 8px; }
+}
+@media (max-width: 480px) {
+  .stage { font-size: 8px; padding: 4px 6px; }
+}
+
 /* ═══ FOOTER ═══ */
 .footer {
   border-top: 1px solid var(--border);
