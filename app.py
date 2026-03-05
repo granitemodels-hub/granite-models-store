@@ -2,7 +2,7 @@
 GRANITE MODELS — Portfolio Website v5
 7-page static portfolio site served via Flask
 """
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, send_from_directory
 from readmes import READMES
 import os
 
@@ -235,6 +235,10 @@ def contact():
 @app.route('/robots.txt')
 def robots():
     return app.send_static_file('robots.txt')
+
+@app.route('/videos/<path:filename>')
+def serve_video(filename):
+    return send_from_directory(os.path.join(app.root_path, 'videos'), filename)
 
 @app.route('/sitemap.xml')
 def sitemap():
