@@ -17,7 +17,7 @@ PROJECTS = {
         'description': 'Full-lifecycle lead generation: scrape businesses from 5 sources, score with AI, enrich emails and social profiles, deliver to clients with territory exclusivity, collect feedback, auto-adjust scoring. CAN-SPAM compliant email campaigns with SendGrid, drip sequences, and 45-day compliance wipe.',
         'stats': {'lines': '14,600+', 'tables': '27', 'routes': '81+'},
         'tech': ['Python', 'Flask', 'SQLite', 'SendGrid', 'Ollama', 'Google Places API'],
-        'features': ['Multi-source scraping (Google, Yelp, BBB, Thumbtack, YellowPages)', 'AI lead scoring with intent signals', 'Territory exclusivity and delivery engine', 'Email campaigns with CAN-SPAM compliance', 'Drip sequence automation', 'Client portal with self-service', 'AI assistant with 4-provider failover', 'Invoice generation (GMA-YYYY-NNNN format)'],
+        'features': ['Multi-source scraping (Google, Yelp, BBB, Thumbtack, YellowPages)', 'AI lead scoring with intent signals', 'Territory exclusivity and delivery engine', 'Email campaigns with CAN-SPAM compliance', 'Drip sequence automation', 'Client portal with self-service', 'AI assistant with 4-provider failover', 'Invoice generation (GMA-YYYY-NNNN format)', 'Built-in admin panel for system management', 'Multi-state compliance for 6 northeastern states'],
         'video': 'lead-hunter-pro-20260205-094919.webm',
         'priority': 'flagship'
     },
@@ -25,11 +25,11 @@ PROJECTS = {
         'name': 'ORGANIZED_SYSTEM',
         'sector': 'Trading & Finance',
         'status': 'Production',
-        'tagline': 'Institutional-grade automated trading platform',
-        'description': 'Massive multi-army trading system spanning FOREX, crypto, equities, DeFi, penny stocks, and arbitrage. Features MemRL memory framework, multi-LLM orchestration with Architect/Analyst/Sentinel agents, tournament system for module competition, and Banker Buddy accounting with Plaid integration.',
-        'stats': {'lines': '219,000+', 'files': '830', 'ai_modules': '194', 'armies': '6'},
-        'tech': ['Python', 'Flask', 'SQLite', 'Plaid', 'FRED API', 'Jupiter/Pump.fun'],
-        'features': ['6 trading armies (FOREX, CRYPTO, EQUITIES, DEFI, PENNY, ARBITRAGE)', 'MemRL memory framework for learning', 'Multi-LLM orchestration (Architect/Analyst/Sentinel)', 'Tournament system for module competition', 'Banker Buddy accounting with Plaid', 'FRED economic data integration', 'Comprehensive risk management (RAF)', 'Cyberpunk-themed dashboards'],
+        'tagline': 'Institutional-grade automated trading platform — "The Buddy System"',
+        'description': 'Massive multi-army trading system spanning FOREX, crypto, equities, DeFi, penny stocks, and arbitrage. Built as 6 interconnected programs called the Buddy System, plus a standalone Excel dashboard that logs and visualizes all trading data with charts and graphs across the entire system in real-time.',
+        'stats': {'lines': '219,000+', 'files': '830', 'ai_modules': '194', 'armies': '6', 'programs': '6'},
+        'tech': ['Python', 'Flask', 'SQLite', 'Plaid', 'FRED API', 'Jupiter/Pump.fun', 'Excel'],
+        'features': ['Bot Buddy — Core trading bot orchestration and execution', 'Agent Buddy — Multi-LLM orchestration with Architect/Analyst/Sentinel agents', 'Bot Swarm — Distributed swarm intelligence for coordinated trading', 'Finance Buddy — Portfolio management and risk analysis (RAF)', 'Tester Buddy — Strategy backtesting and validation framework', 'Banker Buddy — Full accounting system with Plaid integration', 'Excel Dashboard — Standalone charting and logging for entire system', '6 trading armies (FOREX, CRYPTO, EQUITIES, DEFI, PENNY, ARBITRAGE)', 'MemRL memory framework for learning across sessions', 'Tournament system for module competition', 'FRED economic data integration', 'Pump.fun/Jupiter meme coin infrastructure', 'Cyberpunk-themed dashboards'],
         'video': None,
         'priority': 'flagship'
     },
@@ -37,11 +37,11 @@ PROJECTS = {
         'name': 'Granite Tester',
         'sector': 'Quality & Testing',
         'status': 'Production',
-        'tagline': 'Production readiness testing with PRR scoring',
-        'description': 'Centralized testing platform for the entire Granite ecosystem. Runs automated integration tests against live endpoints, generates Production Readiness Reports with letter grades, and tracks test history over time.',
-        'stats': {'lines': '2,700+', 'test_phases': '7', 'systems_tested': '30+'},
-        'tech': ['Python', 'Flask', 'SQLite', 'SSE Streaming'],
-        'features': ['PRR scoring with letter grades (A-F)', 'SSE live streaming test results', 'Phase-based test organization', 'Trades dashboard test engine', 'LHP v2 test engine', 'Test history tracking and comparison', 'Automated findings engine (BUG/WARNING/INFO)'],
+        'tagline': 'Production readiness testing with PRR scoring — 5 integrated sections',
+        'description': 'Centralized testing and quality platform for the entire Granite ecosystem. Five distinct sections: the main 30-system test runner, a dedicated Trades Dashboard tester, an LHP v2 integration tester, a Research page with AI-powered summarization, and a custom Admin Panel designed after Google\'s admin interface for managing the trades side.',
+        'stats': {'lines': '2,700+', 'sections': '5', 'systems_tested': '30+'},
+        'tech': ['Python', 'Flask', 'SQLite', 'SSE Streaming', 'Ollama AI'],
+        'features': ['30-system test runner with live SSE streaming', 'Trades Dashboard test engine with phase-based testing', 'LHP v2 integration tester (7 phases, 40+ tests)', 'Research page with AI summarizer for test analysis', 'Google-style Admin Panel for trades system management', 'PRR scoring with letter grades (A-F)', 'Findings engine (BUG/WARNING/INFO severity)', 'Test history tracking and run comparison'],
         'video': None,
         'priority': 'flagship'
     },
@@ -104,6 +104,8 @@ PROJECTS = {
     'social-media': {'name': 'Social Media Manager', 'sector': 'Marketing & Content', 'status': 'Production', 'tagline': 'Schedule and manage social media posts', 'description': 'Content calendar, post scheduling, engagement tracking, and multi-platform management.', 'stats': {}, 'tech': ['Python', 'Flask'], 'features': ['Content calendar', 'Post scheduling', 'Engagement tracking', 'Multi-platform support'], 'video': 'social-media-manager-20260205-134453.webm', 'priority': 'medium'},
     'review-manager': {'name': 'Review Manager', 'sector': 'Marketing & Content', 'status': 'Production', 'tagline': 'Monitor and respond to online reviews', 'description': 'Track reviews across platforms, get alerts for new reviews, and manage responses from one dashboard.', 'stats': {}, 'tech': ['Python', 'Flask'], 'features': ['Multi-platform monitoring', 'Review alerts', 'Response templates', 'Sentiment tracking'], 'video': 'review-manager-20260205-134556.webm', 'priority': 'medium'},
     'design-studio': {'name': 'Granite Design Studio', 'sector': 'Marketing & Content', 'status': 'Planned', 'tagline': 'Zero-cost design workspace for trades businesses', 'description': 'Guided-flow design workspace with dark theme, browser-style tabs, free asset sources only (Unsplash, Pexels, Pixabay, Iconify, Google Fonts). Exports PNG/JPG/SVG/PDF with video editing for Reels/TikTok/Shorts.', 'stats': {}, 'tech': ['Python', 'Flask', 'JavaScript'], 'features': ['Guided design workflow', 'Free asset sources only', 'Video editing for social', 'PNG/JPG/SVG/PDF export'], 'video': None, 'priority': 'medium'},
+    'super-admin': {'name': 'Super Admin Panel', 'sector': 'Operations & Admin', 'status': 'Production', 'tagline': 'Google-style admin panel for the trades ecosystem', 'description': 'Custom-built admin panel modeled after Google\'s admin interface. Manages all trades-side systems, user accounts, system health, and configuration from a single dashboard. Separate from the admin panel built into Lead Hunter Pro.', 'stats': {}, 'tech': ['Python', 'Flask', 'SQLite'], 'features': ['Google-style admin interface', 'Cross-system management', 'User and role administration', 'System health monitoring', 'Configuration management'], 'video': None, 'priority': 'high'},
+    'trading-excel': {'name': 'Trading Excel Dashboard', 'sector': 'Trading & Finance', 'status': 'Production', 'tagline': 'Real-time Excel charting for the entire trading system', 'description': 'Standalone Excel dashboard that connects to ORGANIZED_SYSTEM and visualizes all trading data with charts and graphs. Logs every trade, position, and metric in real-time as the system operates.', 'stats': {}, 'tech': ['Python', 'Excel', 'VBA'], 'features': ['Real-time trade logging', 'Portfolio performance charts', 'Army-by-army breakdown graphs', 'P&L tracking and visualization', 'Standalone — runs alongside the main system'], 'video': None, 'priority': 'high'},
 }
 
 SECTORS = [
