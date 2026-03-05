@@ -36,6 +36,28 @@
     </div>
   </section>
 
+  {% if project.architecture %}
+  <section class="section--sm">
+    <p class="section-label">ARCHITECTURE</p>
+    <div class="about-text" style="max-width:800px">
+      {% for para in project.architecture %}
+      <p>{{ para }}</p>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if project.journey %}
+  <section class="section--sm">
+    <p class="section-label">THE JOURNEY</p>
+    <div class="about-text" style="max-width:800px">
+      {% for para in project.journey %}
+      <p>{{ para }}</p>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   {% if project.video %}
   <section class="section--sm">
     <p class="section-label">DEMO VIDEO</p>
@@ -57,15 +79,6 @@
       <li>{{ f }}</li>
       {% endfor %}
     </ul>
-  </section>
-  {% endif %}
-
-  {% if readme %}
-  <section class="section--sm">
-    <p class="section-label">DETAILED README</p>
-    <div class="about-text" style="max-width:800px">
-      {{ readme | safe }}
-    </div>
   </section>
   {% endif %}
 
