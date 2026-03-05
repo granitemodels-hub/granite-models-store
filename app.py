@@ -196,6 +196,7 @@ SOCIAL = {
     'medium': 'https://granitemodels.store',
     'youtube': 'https://www.youtube.com/@granitemodels',
     'github': 'https://github.com/granitemodels-hub',
+    'x': 'https://x.com/granitemodels',
     'email': 'granitemodels@gmail.com',
 }
 
