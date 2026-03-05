@@ -410,6 +410,7 @@ img { max-width: 100%; display: block; }
   .process-step { grid-template-columns: 40px 1fr; }
   .container { padding: 0 20px; }
   .section { padding: 48px 0; }
+  .video-compare { grid-template-columns: 1fr !important; }
 }
 
 

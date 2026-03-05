@@ -58,16 +58,39 @@
   </section>
   {% endif %}
 
-  {% if project.video %}
+  {% if project.video or project.video_v2 %}
   <section class="section--sm">
-    <p class="section-label">DEMO VIDEO</p>
+    <p class="section-label">DEMO VIDEOS</p>
+    {% if project.video and project.video_v2 %}
+    <div class="video-compare" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div class="video-embed">
+        <p class="video-label">Version 1 — Where It Started</p>
+        <video controls preload="metadata">
+          <source src="/videos/{{ project.video }}" type="video/webm">
+        </video>
+      </div>
+      <div class="video-embed" style="border-color:var(--gold)">
+        <p class="video-label" style="color:var(--gold)">Current Version — Where It Is Now</p>
+        <video controls preload="metadata">
+          <source src="/videos/{{ project.video_v2 }}" type="video/{{ 'mp4' if project.video_v2.endswith('.mp4') else 'webm' }}">
+        </video>
+      </div>
+    </div>
+    {% elif project.video %}
     <div class="video-embed">
       <p class="video-label">Version 1 — Where It Started</p>
       <video controls preload="metadata">
         <source src="/videos/{{ project.video }}" type="video/webm">
-        Your browser does not support video playback.
       </video>
     </div>
+    {% elif project.video_v2 %}
+    <div class="video-embed" style="border-color:var(--gold)">
+      <p class="video-label" style="color:var(--gold)">Current Version</p>
+      <video controls preload="metadata">
+        <source src="/videos/{{ project.video_v2 }}" type="video/{{ 'mp4' if project.video_v2.endswith('.mp4') else 'webm' }}">
+      </video>
+    </div>
+    {% endif %}
   </section>
   {% endif %}
 

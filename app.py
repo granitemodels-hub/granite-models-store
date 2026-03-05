@@ -33,6 +33,7 @@ PROJECTS = {
             'v2 grew from 2,000 lines to 14,600+ lines across 27 database tables. It\'s now a complete business platform, not just a scraper. The AI assistant alone handles four different LLM providers with automatic failover.'
         ],
         'video': 'lead-hunter-pro-20260205-094919.webm',
+        'video_v2': 'lhp-v2-current.mp4',
         'priority': 'flagship'
     },
     'organized-system': {
