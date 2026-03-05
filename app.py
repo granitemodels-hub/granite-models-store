@@ -3,6 +3,7 @@ GRANITE MODELS — Portfolio Website v5
 7-page static portfolio site served via Flask
 """
 from flask import Flask, render_template, redirect
+from readmes import READMES
 import os
 
 app = Flask(__name__)
@@ -155,7 +156,8 @@ def project_detail(slug):
     p = PROJECTS.get(slug)
     if not p:
         return redirect('/systems')
-    return render_template('project.html', project=p, slug=slug, social=SOCIAL)
+    readme = READMES.get(slug, '')
+    return render_template('project.html', project=p, slug=slug, readme=readme, social=SOCIAL)
 
 @app.route('/process')
 def process():

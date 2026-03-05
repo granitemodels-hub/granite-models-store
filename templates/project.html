@@ -60,6 +60,15 @@
   </section>
   {% endif %}
 
+  {% if readme %}
+  <section class="section--sm">
+    <p class="section-label">DETAILED README</p>
+    <div class="about-text" style="max-width:800px">
+      {{ readme | safe }}
+    </div>
+  </section>
+  {% endif %}
+
   <section class="section--sm" style="padding-bottom:60px">
     <a href="/systems" style="font-size:14px;color:var(--gold);font-weight:600">← Back to All Systems</a>
   </section>
