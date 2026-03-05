@@ -149,4 +149,52 @@ Custom admin interface designed after Google's admin console. Register new syste
 <p>The interface follows Google Workspace Admin's layout patterns — clean card-based sections, search-first navigation, and role-based access controls. This familiar design means anyone who's used Google Admin can navigate it immediately.</p>
 """,
 
+'steel-dashboard': """
+<h2>Overview</h2>
+<p>The Steel Fabrication Dashboard is a complete business management platform built specifically for steel fabrication shops. It covers every part of daily operations — from the moment a quote request comes in to the moment the finished product ships out the door. Job tracking, material inventory, crew scheduling, machine assignments, client billing, weld logs, equipment maintenance, and real-time shop floor visibility — all in one system.</p>
+
+<p>This isn't generic business software with a steel label slapped on it. Every feature was designed around how a real fabrication shop actually runs. The job pipeline tracks status from quote to approval to fabrication to QC to delivery. Material inventory knows the difference between flat bar and angle iron. The scheduling system assigns crews to machines and tracks shift coverage. If you run a shop, this was built for you.</p>
+
+<h2>AI Assistant</h2>
+<p>The dashboard includes a built-in AI assistant powered by a multi-provider system with automatic failover. It runs locally first for speed and privacy, and falls back to cloud providers if needed. The AI handles three critical shop functions:</p>
+
+<p><strong>Job Cost Estimating:</strong> Feed it the specs — material type, dimensions, quantity, fab complexity — and it generates a cost estimate based on your actual material prices, labor rates, and historical job data. No more napkin math on quotes.</p>
+
+<p><strong>Schedule Optimization:</strong> The AI analyzes your current job board, crew availability, and machine capacity to recommend the most efficient production sequence. It flags conflicts before they become problems — like scheduling two jobs on the same press brake at the same time, or overloading a welder who's already at capacity.</p>
+
+<p><strong>Material Forecasting:</strong> Based on your job pipeline and historical usage patterns, the AI predicts what materials you'll need and when. It flags reorder points before you run out, so you're never waiting on steel while a crew sits idle.</p>
+
+<h2>Shop Floor Dashboard</h2>
+<p>The real-time shop floor view shows every active job, which workstation it's at, who's working on it, and where it stands in the pipeline. Mount a screen in the shop and everyone knows what's happening without walking to the office. Job status updates can be made from a phone on the floor — a fabricator taps "complete" when a weld is done and the system moves the job to the next stage automatically.</p>
+
+<h2>Weld Tracking and Compliance</h2>
+<p>Full weld log system with welder certification tracking, weld procedure specifications (WPS), and inspection records. Every weld is tied to a job, a welder, and a procedure. When an inspector asks for documentation, you pull it up in seconds instead of digging through filing cabinets. The system tracks cert expiration dates and alerts you before a welder's certs lapse.</p>
+
+<h2>IoT Integration — Smart Shop</h2>
+<p>The dashboard is architected to connect with IoT sensor systems for real-time shop environment monitoring. This isn't theoretical — the integration points are built into the platform:</p>
+
+<p><strong>Air Quality and Ventilation:</strong> Sensors detect welding fume levels in real time. When concentrations exceed thresholds, the system triggers automated ventilation and extraction. Your crew breathes cleaner air and you stay OSHA compliant without someone manually checking monitors all day.</p>
+
+<p><strong>Temperature and Humidity:</strong> Environmental sensors track shop conditions that affect weld quality and material handling. Alerts fire if conditions fall outside spec — critical for shops doing structural or code work where ambient temperature matters.</p>
+
+<p><strong>Equipment Vibration Monitoring:</strong> Sensors on key machines (press brakes, saws, rollers) detect abnormal vibration patterns that indicate wear or impending failure. The system flags maintenance needs before a machine goes down mid-job.</p>
+
+<p><strong>Compressor and Power Management:</strong> Automated scheduling for compressors, plasma cutters, and high-draw equipment. The system staggers startups to avoid demand spikes and schedules non-critical equipment around peak production hours.</p>
+
+<h2>Robotic Integration</h2>
+<p>The platform includes integration points for robotic systems designed for fabrication environments:</p>
+
+<p><strong>Automated Weld Inspection:</strong> Computer vision system that inspects weld quality, dimensional accuracy, and surface defects on fabricated parts. Camera-based with AI classification trained on real shop data. Catches defects that visual inspection misses and generates photo evidence for every pass/fail decision. Reduces QC bottlenecks without reducing quality.</p>
+
+<p><strong>Material Dispatch:</strong> Robotic dispatch routing for automated material movement within the shop. Integrates with the job scheduler to pre-stage materials at workstations before fabricators need them. Cuts dead time between jobs.</p>
+
+<p><strong>Robotic Arm Integration:</strong> Control interface for programmable robotic arms handling repetitive tasks — material cutting, sorting, welding prep, and parts assembly. Visual programming interface so operators don't need to write code. Safety zones, emergency stops, and override controls built in.</p>
+
+<h2>Architecture</h2>
+<p>Built on the same proven architecture as the Landscape Dashboard — the reference build for all Granite trades dashboards. 49 database tables, 67+ HTML templates, 180+ route decorators, and three-tier role-based security (owner, shop manager, fabricator). The entire system runs as a single Flask application on SQLite, deployable on any machine in the shop. No cloud subscription required — your data stays on your network.</p>
+
+<h2>Who This Is For</h2>
+<p>This is for fabrication shop owners who are running their operation on whiteboards, spreadsheets, and memory. If you've ever lost track of a job, missed a material reorder, double-booked a machine, or spent an hour assembling an invoice from handwritten notes — this system replaces all of that with one screen. Built by someone who's stood in a shop and watched these problems happen firsthand.</p>
+""",
+
 }
