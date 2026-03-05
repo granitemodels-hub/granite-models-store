@@ -193,7 +193,7 @@ SECTORS = [
 SOCIAL = {
     'linkedin': 'https://www.linkedin.com/in/jon-anderson-418122300',
     'facebook': 'https://www.facebook.com/jon.anderson.236899',
-    'medium': 'https://granitemodels.store',
+    'medium': 'https://medium.com/@axelfrankie525',
     'youtube': 'https://www.youtube.com/@granitemodels',
     'github': 'https://github.com/granitemodels-hub',
     'x': 'https://x.com/granitemodels',
