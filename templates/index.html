@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Granite Models Automations — From Job Sites to Software{% endblock %}
+
+{% block content %}
+<div class="container">
+  <section class="hero">
+    <p class="hero-eyebrow">FROM JOB SITES TO SOFTWARE</p>
+    <h1>Building What the Trades<br>Industry <em>Needs</em></h1>
+    <p class="hero-sub">30 years in the trades. 219,000+ lines of production code. I build automation systems that actually work — for people who actually work.</p>
+    <a href="/systems" class="hero-cta">See My Work →</a>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num" data-target="30" data-suffix="+">0+</div>
+      <div class="stat-label">Systems Built</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="219000" data-suffix="+">0+</div>
+      <div class="stat-label">Lines (Trading Alone)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="30">0</div>
+      <div class="stat-label">Years in Trades</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-target="6">0</div>
+      <div class="stat-label">Trades Covered</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <p class="section-label">FLAGSHIP SYSTEMS</p>
+    <h2 class="section-title">The Big Three</h2>
+    <p class="section-desc">These represent the scale and depth of what I build. Each one is a complete production system, not a tutorial project.</p>
+    <div class="card-grid">
+      {% for slug, p in projects.items() %}
+      <a href="/project/{{ slug }}" class="card" style="text-decoration:none">
+        <span class="card-num">{{ '%02d'|format(loop.index) }}</span>
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.tagline }}</p>
+        {% if p.stats %}
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          {% for k, v in p.stats.items() %}
+          <span class="tech-tag">{{ v }} {{ k.replace('_',' ').title() }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <span class="card-link">View Details →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:40px">
+    <p class="section-label">PATENT PENDING</p>
+    <h2 class="section-title">Innovation in Progress</h2>
+    <p class="section-desc">Multiple systems in the Granite ecosystem incorporate patent-pending automation methods. Built from real trades experience, not theoretical research.</p>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}How I Build — Engineering Process | Granite Models{% endblock %}
+
+{% block content %}
+<div class="container">
+  <section class="section">
+    <p class="section-label">HOW I BUILD</p>
+    <h2 class="section-title">Engineering Discipline, Not Guesswork</h2>
+    <p class="section-desc">Most solo developers don't build QA infrastructure. I did. Every system in the Granite ecosystem goes through a rigorous build-test-deploy pipeline before it touches production.</p>
+  </section>
+
+  <section class="section--sm">
+    <p class="section-label">THE WORKFLOW</p>
+    <div style="max-width:700px">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Schema First</h3>
+          <p>Every feature starts with database design. Tables and columns are defined and created before a single route or template is written. Run PRAGMA table_info() to verify before writing queries.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Temp File Development</h3>
+          <p>All new code goes to a working copy — never directly to production. The working file gets syntax checked, tested, and verified before it replaces anything live.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Build & Test</h3>
+          <p>Routes are hit with real HTTP requests. Pages are loaded in the browser. Column mismatches and template errors only surface at runtime — syntax checks alone aren't enough.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Granite Tester — PRR Scoring</h3>
+          <p>The centralized testing platform runs automated integration tests against live endpoints. Generates a Production Readiness Report with letter grades (A through F) and phase-by-phase scoring.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Deploy to Production</h3>
+          <p>Working copy is verified to match production via byte-level comparison. File sync across 5 checkpoint locations. Only after all checks pass does the new code go live.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Clean Up</h3>
+          <p>Every session ends with zero temp files. No leftover scripts, no orphaned test data. Clean workspace, clean codebase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--sm">
+    <p class="section-label">THE TOOLS</p>
+    <div class="card-grid" style="max-width:900px">
+      <div class="card">
+        <h3>Build Organizer</h3>
+        <p>Tracks what's been built, what's in progress, and what's next across the entire ecosystem. Prevents duplicate work and keeps priorities straight.</p>
+      </div>
+      <div class="card">
+        <h3>Quality Framework</h3>
+        <p>Defines pass/fail criteria for every system. BUG, WARNING, and INFO severity levels with automated findings engine following Google SWE/SRE PRR standards.</p>
+      </div>
+      <div class="card">
+        <h3>Session Handoff</h3>
+        <p>Maintains continuity between development sessions. Every session starts by reading the handoff doc. Every session ends by updating it. No context is ever lost.</p>
+      </div>
+      <div class="card">
+        <h3>Debug & Fix Toolkit</h3>
+        <p>Systematic debugging approach: reproduce, isolate, fix in temp, verify, deploy. No guessing, no "try this and see."</p>
+      </div>
+      <div class="card">
+        <h3>Testing Skill</h3>
+        <p>Automated test generation and execution. Wipe and re-seed database before final test runs. Account for seeded default IDs. Include reject buttons alongside approve.</p>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

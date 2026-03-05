@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Granite Models Automations{% endblock %}</title>
+<meta name="description" content="{% block description %}Engineering portfolio of Jon Anderson — 30+ production automation systems built for the trades industry.{% endblock %}">
+<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<div class="banner">⚡ Engineering Portfolio — Full site rebuild in progress. All systems shown are real production software.</div>
+
+<nav class="nav">
+<div class="nav-inner">
+  <a href="/" class="nav-logo">Granite<span>Models</span></a>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/story">My Story</a>
+    <a href="/systems">Systems</a>
+    <a href="/process">How I Build</a>
+    <a href="/roadmap">Roadmap</a>
+    <a href="/contact">Contact</a>
+  </div>
+</div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+  <div class="footer-logo">Granite<span>Models</span></div>
+  <div class="footer-links">
+    <a href="mailto:{{ social.email }}">Email</a>
+    <a href="{{ social.youtube }}" target="_blank">YouTube</a>
+    <a href="{{ social.linkedin }}" target="_blank">LinkedIn</a>
+    <a href="{{ social.github }}" target="_blank">GitHub</a>
+    <a href="{{ social.facebook }}" target="_blank">Facebook</a>
+    <a href="{{ social.medium }}" target="_blank">Medium</a>
+  </div>
+  <p class="footer-copy">&copy; 2026 Granite Models Automations &bull; New Hampshire &bull; granitemodels.store</p>
+</footer>
+
+<script src="/static/main.js"></script>
+</body>
+</html>

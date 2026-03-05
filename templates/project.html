@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}{{ project.name }} | Granite Models{% endblock %}
+
+{% block content %}
+<div class="container">
+  <section class="project-hero">
+    {% set badge_map = {'Production':'production','In Development':'development','Rebuilding':'rebuilding','Planned':'planned'} %}
+    <span class="badge badge--{{ badge_map.get(project.status, 'planned') }}">{{ project.status }}</span>
+    <h1>{{ project.name }}</h1>
+    <p>{{ project.tagline }}</p>
+    <div class="tech-stack">
+      {% for tech in project.tech %}
+      <span class="tech-tag">{{ tech }}</span>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section--sm">
+    {% if project.stats %}
+    <p class="section-label">BY THE NUMBERS</p>
+    <div class="project-stats">
+      {% for key, val in project.stats.items() %}
+      <div class="project-stat">
+        <div class="val">{{ val }}</div>
+        <div class="lbl">{{ key.replace('_',' ').title() }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+
+  <section class="section--sm">
+    <p class="section-label">WHAT IT DOES</p>
+    <div class="about-text" style="max-width:800px">
+      <p>{{ project.description }}</p>
+    </div>
+  </section>
+
+  {% if project.video %}
+  <section class="section--sm">
+    <p class="section-label">DEMO VIDEO</p>
+    <div class="video-embed">
+      <p class="video-label">Version 1 — Where It Started</p>
+      <video controls preload="metadata">
+        <source src="/videos/{{ project.video }}" type="video/webm">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if project.features %}
+  <section class="section--sm">
+    <p class="section-label">KEY FEATURES</p>
+    <ul class="feature-list" style="max-width:700px">
+      {% for f in project.features %}
+      <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <section class="section--sm" style="padding-bottom:60px">
+    <a href="/systems" style="font-size:14px;color:var(--gold);font-weight:600">← Back to All Systems</a>
+  </section>
+</div>
+{% endblock %}

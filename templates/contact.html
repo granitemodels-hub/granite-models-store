@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Contact — Jon Anderson | Granite Models{% endblock %}
+
+{% block content %}
+<div class="container">
+  <section class="section">
+    <p class="section-label">CONTACT</p>
+    <h2 class="section-title">Let's Talk</h2>
+    <p class="section-desc">Whether you're a trades business looking for automation, an investor interested in the vision, or a developer who wants to connect — reach out.</p>
+  </section>
+
+  <section class="section--sm">
+    <div class="contact-grid">
+      <a href="mailto:{{ social.email }}" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">{{ social.email }}</div>
+        </div>
+      </a>
+      <a href="{{ social.linkedin }}" target="_blank" class="contact-card">
+        <div class="contact-icon">💼</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">Jon Anderson</div>
+        </div>
+      </a>
+      <a href="{{ social.youtube }}" target="_blank" class="contact-card">
+        <div class="contact-icon">▶️</div>
+        <div>
+          <div class="contact-label">YouTube</div>
+          <div class="contact-value">@granitemodels</div>
+        </div>
+      </a>
+      <a href="{{ social.github }}" target="_blank" class="contact-card">
+        <div class="contact-icon">💻</div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">granitemodels-hub</div>
+        </div>
+      </a>
+      <a href="{{ social.facebook }}" target="_blank" class="contact-card">
+        <div class="contact-icon">👤</div>
+        <div>
+          <div class="contact-label">Facebook</div>
+          <div class="contact-value">Jon Anderson</div>
+        </div>
+      </a>
+      <a href="{{ social.medium }}" target="_blank" class="contact-card">
+        <div class="contact-icon">📝</div>
+        <div>
+          <div class="contact-label">Medium</div>
+          <div class="contact-value">Granite Models</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section--sm" style="padding-bottom:60px">
+    <div class="skills-card" style="max-width:600px">
+      <h3>Based In</h3>
+      <div class="skill-item"><span class="skill-check">▸</span> New Hampshire, USA</div>
+      <div class="skill-item"><span class="skill-check">▸</span> Granite Models Automations (EIN registered)</div>
+      <div class="skill-item"><span class="skill-check">▸</span> Available for consulting, partnerships, and SaaS inquiries</div>
+    </div>
+  </section>
+</div>
+{% endblock %}
