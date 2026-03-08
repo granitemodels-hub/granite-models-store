@@ -2,7 +2,7 @@
 GRANITE MODELS — Portfolio Website v5
 7-page static portfolio site served via Flask
 """
-from flask import Flask, render_template, redirect, send_from_directory
+from flask import Flask, render_template, redirect, send_from_directory, request, flash
 from readmes import READMES
 import os
 
@@ -233,6 +233,44 @@ def roadmap():
 def contact():
     return render_template('contact.html', social=SOCIAL)
 
+
+@app.route('/pricing', methods=['GET', 'POST'])
+def pricing():
+    if request.method == 'POST':
+        name = request.form.get('name', '')
+        email = request.form.get('email', '')
+        business = request.form.get('business', '')
+        phone = request.form.get('phone', '')
+        trade = request.form.get('trade', '')
+        interest = request.form.get('interest', '')
+        message = request.form.get('message', '')
+        # Send via SendGrid
+        try:
+            import requests as _req
+            sg_key = 'SG.HvOfqghiS0O7d-0xHeNtUA.9OhSEuFmDIOc5yhyWL8lfn1wh1jg1oPC7S'
+            body_html = f"""
+            <h2>New Lead from granitemodels.store</h2>
+            <table style="border-collapse:collapse;font-family:Arial;">
+            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Name</td><td style="padding:8px;border-bottom:1px solid #ddd;">{name}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Email</td><td style="padding:8px;border-bottom:1px solid #ddd;">{email}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Business</td><td style="padding:8px;border-bottom:1px solid #ddd;">{business}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Phone</td><td style="padding:8px;border-bottom:1px solid #ddd;">{phone}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Trade</td><td style="padding:8px;border-bottom:1px solid #ddd;">{trade}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Interested In</td><td style="padding:8px;border-bottom:1px solid #ddd;">{interest}</td></tr>
+            <tr><td style="padding:8px;font-weight:bold;">Message</td><td style="padding:8px;">{message}</td></tr>
+            </table>
+            """
+            _req.post('https://api.sendgrid.com/v3/mail/send', json={
+                'personalizations': [{'to': [{'email': 'jon@granitemodels.store'}]}],
+                'from': {'email': 'leads@granitemodels.store', 'name': 'Granite Store'},
+                'subject': f'[NEW LEAD] {name} - {interest} - {trade}',
+                'content': [{'type': 'text/html', 'value': body_html}]
+            }, headers={'Authorization': f'Bearer {sg_key}', 'Content-Type': 'application/json'}, timeout=10)
+        except Exception as e:
+            print(f'[SendGrid] Error: {e}')
+        return render_template('pricing.html', social=SOCIAL, success=True)
+    return render_template('pricing.html', social=SOCIAL, success=False)
+
 @app.route('/robots.txt')
 def robots():
     return app.send_static_file('robots.txt')
@@ -243,7 +281,7 @@ def serve_video(filename):
 
 @app.route('/sitemap.xml')
 def sitemap():
-    pages = ['/', '/story', '/systems', '/process', '/roadmap', '/contact']
+    pages = ['/', '/story', '/systems', '/process', '/roadmap', '/pricing', '/contact']
     pages += [f'/project/{slug}' for slug in PROJECTS]
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for p in pages:
