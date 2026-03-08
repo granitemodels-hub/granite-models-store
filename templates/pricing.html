@@ -3,155 +3,180 @@
 {% block description %}Trade-specific dashboards, AI systems, and lead generation. Buy once or subscribe. Built by a 30-year trades veteran.{% endblock %}
 
 {% block content %}
-<div class="pricing-page">
+<div class="pricing-watermark"></div>
+<div class="container">
 
   <!-- HEADER -->
-  <div class="pr-header">
-    <p class="pr-label">PRICING</p>
-    <h2 class="pr-title">Built for Trades. Priced for Trades.</h2>
-    <p class="pr-subtitle">Trade-specific. Self-hosted. No cloud lock-in. No per-user fees.</p>
-  </div>
+  <section class="section" style="padding-bottom:40px;">
+    <p class="section-label">PRICING</p>
+    <h2 class="section-title">Built for Trades. Priced for Trades.</h2>
+    <p class="section-desc">Trade-specific, self-hosted, no cloud lock-in, no per-user fees. Built by a 30-year trades veteran who knows the industry from the ground up.</p>
+  </section>
 
-  <!-- COMING SOON: BROWSER -->
-  <div class="pr-banner">
-    <span class="pr-banner-badge">COMING SOON</span>
-    <div class="pr-banner-text">
-      <strong>Granite Browser</strong> &mdash; $30/mo &bull; Trade community platform &bull; GraniteChat, Job Board, Safety Check-In, Contractor Verification
-      <span class="pr-banner-lock">$30/mo locked in for all current buyers.</span>
-    </div>
-  </div>
-
-  <!-- 3-YEAR COMPARISON -->
-  <div class="pr-compare">
-    <div class="pr-compare-title">3-Year Cost: You vs Competitors</div>
-    <div class="pr-compare-grid">
-      <div class="pr-compare-row pr-compare-us">
-        <span>Granite Complete</span><span>$5,360</span><span>$360</span><span>$360</span><span class="pr-green">$6,080</span>
+  <!-- COMING SOON + COMPARISON -->
+  <section class="section--sm" style="padding-top:0;">
+    <div class="card" style="border-left:2px solid var(--gold);margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <span class="badge badge--development">COMING SOON</span>
+        <span style="font-family:var(--font-display);font-weight:700;color:var(--text);">Granite Browser &mdash; $30/mo</span>
       </div>
-      <div class="pr-compare-row"><span>ServiceTitan (3 techs)</span><span>$9,000+</span><span>$9,000+</span><span>$9,000+</span><span>$27,000+</span></div>
-      <div class="pr-compare-row"><span>Jobber Grow</span><span>$4,188</span><span>$4,188</span><span>$4,188</span><span>$12,564</span></div>
-      <div class="pr-compare-row"><span>SimPRO</span><span>$4,800</span><span>$4,800</span><span>$4,800</span><span>$14,400</span></div>
+      <p style="margin-top:8px;">Trade community platform. GraniteChat, Job Board, Trades Directory, Safety Check-In, Contractor Verification. <span style="color:var(--gold);font-weight:600;">$30/mo locked in for all current buyers.</span></p>
     </div>
-    <p class="pr-compare-note">You own it. They rent to you forever. No AI. No leads. Generic tools.</p>
-  </div>
 
-  <!-- ═══ PRICING CARDS — Individual cards, not columns ═══ -->
-  <div class="pr-cards">
-
-    <div class="pr-card">
-      <div class="pr-card-head">Basic Dashboard</div>
-      <div class="pr-card-price">$249 &mdash; $497</div>
-      <div class="pr-card-sub">One-time &bull; Own forever</div>
-      <div class="pr-card-list">
-        <span>&#10003; Trade-specific dashboard</span>
-        <span>&#10003; Jobs, crew, scheduling, invoicing</span>
-        <span>&#10003; Revenue &amp; analytics</span>
-        <span>&#10003; Self-hosted on your PC</span>
-        <span>&#10003; 30 days email support</span>
+    <div class="card">
+      <h3 style="margin-bottom:16px;">3-Year Cost: You vs Competitors</h3>
+      <div class="pricing-compare">
+        <div class="pc-row pc-header"><span>Plan</span><span>Year 1</span><span>Year 2</span><span>Year 3</span><span>3-Year Total</span></div>
+        <div class="pc-row pc-us"><span>Granite Complete</span><span>$5,360</span><span>$360</span><span>$360</span><span>$6,080</span></div>
+        <div class="pc-row"><span>ServiceTitan (3 techs)</span><span>$9,000+</span><span>$9,000+</span><span>$9,000+</span><span>$27,000+</span></div>
+        <div class="pc-row"><span>Jobber Grow</span><span>$4,188</span><span>$4,188</span><span>$4,188</span><span>$12,564</span></div>
+        <div class="pc-row"><span>SimPRO</span><span>$4,800</span><span>$4,800</span><span>$4,800</span><span>$14,400</span></div>
       </div>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-muted);">You own it. They rent to you forever. No AI. No leads. Generic tools.</p>
     </div>
+  </section>
 
-    <div class="pr-card">
-      <div class="pr-card-head">AI Dashboard</div>
-      <div class="pr-card-price">$500 &mdash; $600</div>
-      <div class="pr-card-sub">One-time &bull; Own forever</div>
-      <div class="pr-card-list">
-        <span>&#10003; Everything in Basic</span>
-        <span>&#10003; AI assistant built in</span>
-        <span>&#10003; Trade-specific AI knowledge</span>
-        <span>&#10003; Runs locally &mdash; no cloud fees</span>
+  <!-- PRICING CARDS -->
+  <section class="section--sm" style="padding-top:0;">
+    <div class="card-grid pricing-grid">
+
+      <div class="card pricing-card">
+        <div class="card-num">01</div>
+        <span class="badge badge--production">BUY ONCE</span>
+        <h3>Basic Dashboard</h3>
+        <div class="pricing-price">$249 &mdash; $497</div>
+        <div class="pricing-sub">One-time &bull; Own forever</div>
+        <div class="pricing-list">
+          <span>Trade-specific dashboard for 1 trade</span>
+          <span>Jobs, crew, scheduling, invoicing</span>
+          <span>Revenue &amp; performance analytics</span>
+          <span>Runs on your own Windows PC</span>
+          <span>30 days email support included</span>
+        </div>
+        <a href="#get-started" class="card-link">Get Started &rarr;</a>
       </div>
-    </div>
 
-    <div class="pr-card">
-      <div class="pr-card-head">Custom Build</div>
-      <div class="pr-card-price">$100 &mdash; $150/hr</div>
-      <div class="pr-card-sub">$500 minimum project</div>
-      <div class="pr-card-list">
-        <span>&#10003; Fully custom system</span>
-        <span>&#10003; Written scope first</span>
-        <span>&#10003; 50% deposit, balance on delivery</span>
+      <div class="card pricing-card">
+        <div class="card-num">02</div>
+        <span class="badge badge--production">BUY ONCE</span>
+        <h3>AI Dashboard</h3>
+        <div class="pricing-price">$500 &mdash; $600</div>
+        <div class="pricing-sub">One-time &bull; Own forever</div>
+        <div class="pricing-list">
+          <span>Everything in Basic, plus:</span>
+          <span>AI assistant built into dashboard</span>
+          <span>Trade-specific AI knowledge base</span>
+          <span>Runs locally &mdash; no cloud AI fees</span>
+        </div>
+        <a href="#get-started" class="card-link">Get Started &rarr;</a>
       </div>
-    </div>
 
-    <div class="pr-card pr-card--hot">
-      <div class="pr-card-badge">MOST POPULAR</div>
-      <div class="pr-card-head">Granite Standard</div>
-      <div class="pr-card-price">$250<span>/mo</span></div>
-      <div class="pr-card-sub">$1,000 setup &bull; Cancel after 3 mo</div>
-      <div class="pr-card-list">
-        <span>&#10003; Full dashboard + AI assistant</span>
-        <span>&#10003; Customer Portal</span>
-        <span>&#10003; SendGrid email integration</span>
-        <span>&#10003; Monthly updates</span>
-        <span>&#10003; No per-user fees</span>
-        <span class="pr-highlight">&#9733; 14-day Lead Hunter Pro trial</span>
+      <div class="card pricing-card">
+        <div class="card-num">03</div>
+        <span class="badge badge--rebuilding">CUSTOM</span>
+        <h3>Custom Build</h3>
+        <div class="pricing-price">$100 &mdash; $150<span>/hr</span></div>
+        <div class="pricing-sub">$500 minimum project</div>
+        <div class="pricing-list">
+          <span>Fully custom system built to your spec</span>
+          <span>Written scope before work begins</span>
+          <span>50% deposit, balance on delivery</span>
+        </div>
+        <a href="#get-started" class="card-link">Request Quote &rarr;</a>
       </div>
-    </div>
 
-    <div class="pr-card">
-      <div class="pr-card-head">Granite Pro</div>
-      <div class="pr-card-price">$500<span>/mo</span></div>
-      <div class="pr-card-sub">$1,000 setup &bull; Full system</div>
-      <div class="pr-card-list">
-        <span>&#10003; Everything in Standard</span>
-        <span>&#10003; Lead Hunter Pro v2</span>
-        <span>&#10003; Drip email sequences</span>
-        <span>&#10003; 45-day compliance wipe</span>
-        <span>&#10003; Priority phone + email support</span>
+      <div class="card pricing-card pricing-card--featured">
+        <div class="card-num">&star;</div>
+        <span class="badge badge--production">MOST POPULAR</span>
+        <h3>Granite Standard</h3>
+        <div class="pricing-price">$250<span>/mo</span></div>
+        <div class="pricing-sub">$1,000 setup &bull; Cancel after 3 months</div>
+        <div class="pricing-list">
+          <span>Full trade dashboard + AI assistant</span>
+          <span>Customer Portal access</span>
+          <span>SendGrid email integration</span>
+          <span>Monthly updates &amp; improvements</span>
+          <span>Priority email support</span>
+          <span>No per-user fees — whole team, one price</span>
+          <span class="pricing-hl">&star; 14-day free Lead Hunter Pro trial</span>
+        </div>
+        <a href="#get-started" class="card-link">Get Started &rarr;</a>
       </div>
-    </div>
 
-    <div class="pr-card pr-card--complete">
-      <div class="pr-card-head">Granite Complete</div>
-      <div class="pr-card-price">$5,000</div>
-      <div class="pr-card-sub">One-time &bull; Everything &bull; Forever</div>
-      <div class="pr-card-list">
-        <span>&#10003; Every dashboard, every trade</span>
-        <span>&#10003; AI in every dashboard</span>
-        <span>&#10003; Lead Hunter Pro v2</span>
-        <span>&#10003; Empire + Portal + DocVault</span>
-        <span>&#10003; Design Studio</span>
-        <span>&#10003; Installation + training</span>
-        <span class="pr-highlight">&#9733; Break-even at 10 months</span>
+      <div class="card pricing-card">
+        <div class="card-num">05</div>
+        <span class="badge badge--rebuilding">SUBSCRIPTION</span>
+        <h3>Granite Pro</h3>
+        <div class="pricing-price">$500<span>/mo</span></div>
+        <div class="pricing-sub">$1,000 setup &bull; Full leads system</div>
+        <div class="pricing-list">
+          <span>Everything in Standard, plus:</span>
+          <span>Lead Hunter Pro v2 &mdash; automated leads</span>
+          <span>Drip email sequences via SendGrid</span>
+          <span>45-day compliance wipe</span>
+          <span>Priority email &amp; phone support</span>
+        </div>
+        <a href="#get-started" class="card-link">Get Started &rarr;</a>
       </div>
+
+      <div class="card pricing-card pricing-card--complete">
+        <div class="card-num">&diams;</div>
+        <span class="badge badge--production">ALL-IN</span>
+        <h3>Granite Complete</h3>
+        <div class="pricing-price">$5,000</div>
+        <div class="pricing-sub">One-time &bull; Everything &bull; $30/mo Browser only</div>
+        <div class="pricing-list">
+          <span>Every dashboard, every trade</span>
+          <span>AI assistant in every dashboard</span>
+          <span>Lead Hunter Pro v2 &mdash; full system</span>
+          <span>Empire + Portal + DocVault + Studio</span>
+          <span>Installation, configuration &amp; training</span>
+          <span>No per-user fees. No cloud fees. Ever.</span>
+          <span class="pricing-hl">&star; Break-even vs competitors at 10 months</span>
+        </div>
+        <a href="#get-started" class="card-link">Get Started &rarr;</a>
+      </div>
+
     </div>
+  </section>
 
-  </div>
+  <!-- GET STARTED -->
+  <section class="section" id="get-started">
+    <p class="section-label">GET STARTED</p>
+    <h2 class="section-title">Ready to Own Your Software?</h2>
+    <p class="section-desc">Tell us about your business. Jon will personally follow up within 24 hours.</p>
 
-  <!-- GET STARTED FORM -->
-  <div class="pr-form-section" id="get-started">
-    <div class="pr-form-head">Ready to Own Your Software?</div>
-    <p class="pr-form-sub">Jon will personally follow up within 24 hours.</p>
     {% if success %}
-    <div class="pr-success">
-      <div style="font-size:2rem;">&#10003;</div>
+    <div class="card" style="max-width:500px;text-align:center;">
+      <div style="font-size:2.5rem;color:var(--green);margin-bottom:12px;">&#10003;</div>
       <h3>Message Sent!</h3>
       <p>Jon will review your request and get back to you within 24 hours.</p>
     </div>
     {% else %}
-    <form method="POST" action="/pricing" class="pr-form">
-      <div class="pr-form-row">
-        <div class="pr-field"><label>Name *</label><input type="text" name="name" required placeholder="John Smith"></div>
-        <div class="pr-field"><label>Business</label><input type="text" name="business" placeholder="Smith HVAC LLC"></div>
-      </div>
-      <div class="pr-form-row">
-        <div class="pr-field"><label>Email *</label><input type="email" name="email" required placeholder="john@smithhvac.com"></div>
-        <div class="pr-field"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
-      </div>
-      <div class="pr-form-row">
-        <div class="pr-field"><label>Trade</label>
-          <select name="trade"><option value="">Select...</option><option value="hvac">HVAC</option><option value="plumbing">Plumbing</option><option value="landscaping">Landscaping</option><option value="construction">Construction</option><option value="electrical">Electrical</option><option value="roofing">Roofing</option><option value="auto">Mechanic / Auto</option><option value="steel">Steel Fabrication</option><option value="winter">Snow / Winter</option><option value="other">Other</option></select>
+    <div style="max-width:600px;">
+      <form method="POST" action="/pricing" class="pricing-form">
+        <div class="pf-row">
+          <div class="pf-field"><label>Your Name *</label><input type="text" name="name" required placeholder="John Smith"></div>
+          <div class="pf-field"><label>Business Name</label><input type="text" name="business" placeholder="Smith HVAC LLC"></div>
         </div>
-        <div class="pr-field"><label>Interested In</label>
-          <select name="interest"><option value="">Select...</option><option value="basic">Basic Dashboard</option><option value="ai">AI Dashboard</option><option value="standard">Granite Standard</option><option value="pro">Granite Pro</option><option value="complete">Granite Complete</option><option value="custom">Custom Build</option><option value="demo">Just a demo</option></select>
+        <div class="pf-row">
+          <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="john@smithhvac.com"></div>
+          <div class="pf-field"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
         </div>
-      </div>
-      <div class="pr-field"><label>About Your Business</label><textarea name="message" rows="3" placeholder="What tools do you use now? What problems are you solving?"></textarea></div>
-      <button type="submit" class="pr-submit">Get Started &#8594;</button>
-    </form>
+        <div class="pf-row">
+          <div class="pf-field"><label>Your Trade</label>
+            <select name="trade"><option value="">Select...</option><option value="hvac">HVAC</option><option value="plumbing">Plumbing</option><option value="landscaping">Landscaping</option><option value="construction">Construction</option><option value="electrical">Electrical</option><option value="roofing">Roofing</option><option value="auto">Mechanic / Auto</option><option value="steel">Steel Fabrication</option><option value="winter">Snow / Winter</option><option value="other">Other</option></select>
+          </div>
+          <div class="pf-field"><label>Interested In</label>
+            <select name="interest"><option value="">Select...</option><option value="basic">Basic Dashboard</option><option value="ai">AI Dashboard</option><option value="standard">Granite Standard</option><option value="pro">Granite Pro</option><option value="complete">Granite Complete</option><option value="custom">Custom Build</option><option value="demo">Just a demo</option></select>
+          </div>
+        </div>
+        <div class="pf-field"><label>About Your Business</label><textarea name="message" rows="3" placeholder="What tools do you use now? What problems are you trying to solve?"></textarea></div>
+        <button type="submit" class="hero-cta" style="width:100%;justify-content:center;margin-top:8px;">Get Started &rarr;</button>
+      </form>
+    </div>
     {% endif %}
-  </div>
+  </section>
 
-</div><!-- .pricing-page -->
+</div><!-- .container -->
 {% endblock %}
