@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Pricing — Granite Models Automations{% endblock %}
-{% block description %}Trade-specific dashboards, AI systems, and lead generation. Buy once or subscribe. Built by a 30-year trades veteran.{% endblock %}
+{% block description %}Trade-specific dashboards with paid service connections. $500 setup, $400/month. Built by a 30-year trades veteran.{% endblock %}
 
 {% block content %}
 <div class="pricing-watermark"></div>
@@ -9,134 +9,104 @@
   <!-- HEADER -->
   <section class="section" style="padding-bottom:40px;">
     <p class="section-label">PRICING</p>
-    <h2 class="section-title">Built for Trades. Priced for Trades.</h2>
-    <p class="section-desc">Trade-specific, self-hosted, no cloud lock-in, no per-user fees. Built by a 30-year trades veteran who knows the industry from the ground up.</p>
+    <h2 class="section-title">Buy the Tool. Pay to Keep It Running.</h2>
+    <p class="section-desc">No per-user fees. No cloud lock-in. One setup fee, one monthly rate, connect only what you need. Built by a 30-year trades veteran.</p>
   </section>
 
-  <!-- COMING SOON + COMPARISON -->
+  <!-- HOW IT WORKS -->
   <section class="section--sm" style="padding-top:0;">
     <div class="card" style="border-left:2px solid var(--gold);margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-        <span class="badge badge--development">COMING SOON</span>
-        <span style="font-family:var(--font-display);font-weight:700;color:var(--text);">Granite Browser &mdash; $30/mo</span>
+      <h3 style="margin-bottom:12px;">How Granite Pricing Works</h3>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <span style="font-size:28px;font-weight:700;color:var(--gold);">$500</span>
+          <span style="color:var(--text-muted);font-size:14px;"> one-time setup</span>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">We build your dashboard, configure your trade, install on your machine. You own it.</p>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <span style="font-size:28px;font-weight:700;color:var(--text);">$400</span>
+          <span style="color:var(--text-muted);font-size:14px;">/month platform</span>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Dashboard access, updates, support, Granite Browser community, all free features included.</p>
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <span style="font-size:28px;font-weight:700;color:var(--green);">$10&ndash;$25</span>
+          <span style="color:var(--text-muted);font-size:14px;"> per connection</span>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Connect premium features one at a time. Pay once, use forever. Pick only what you need.</p>
+        </div>
       </div>
-      <p style="margin-top:8px;">Trade community platform. GraniteChat, Job Board, Trades Directory, Safety Check-In, Contractor Verification. <span style="color:var(--gold);font-weight:600;">$30/mo locked in for all current buyers.</span></p>
     </div>
+  </section>
 
+  <!-- WHAT'S INCLUDED -->
+  <section class="section--sm" style="padding-top:0;">
+    <h3 style="margin-bottom:16px;text-align:center;">What You Get</h3>
+    <div class="card-grid" style="grid-template-columns:repeat(2, 1fr);">
+      <div class="card">
+        <h3 style="color:var(--green);margin-bottom:12px;">Free With Your Dashboard</h3>
+        <div class="pricing-list">
+          <span>Full trade dashboard (jobs, crew, scheduling, clients)</span>
+          <span>Granite Browser community access</span>
+          <span>Trades Directory &amp; Job Board</span>
+          <span>GraniteChat &amp; Trade Channels</span>
+          <span>Q&A Knowledge Base</span>
+          <span>Contractor Intel Network (private)</span>
+          <span>Safety Check-In &amp; Emergency Board</span>
+          <span>Contractor Verification</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--gold);margin-bottom:12px;">Paid Service Connections</h3>
+        <div class="pricing-list">
+          <span><strong>$10 each:</strong> Chemical Log, Excel Export, Wellness Tracker, Emergency Plan, License Tracker</span>
+          <span><strong>$25 each:</strong> QuickBooks, Bidding Intelligence, Subcontractor Manager, Weather Intelligence, Crew Tracker, Reputation Monitor</span>
+          <span>Pay once per connection &mdash; use forever</span>
+          <span>Connect only what your business needs</span>
+          <span>All 5 standard: $50 &bull; All 6 premium: $150</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD HUNTER PRO -->
+  <section class="section--sm" style="padding-top:0;">
+    <div class="card" style="border-left:2px solid var(--blue);">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+        <span class="badge badge--production">ADD-ON</span>
+        <span style="font-family:var(--font-display);font-weight:700;color:var(--text);">Lead Hunter Pro v2</span>
+      </div>
+      <p style="margin-bottom:12px;">Automated lead generation, email enrichment, drip campaigns. Leads auto-populate your dashboard pipeline.</p>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <div><span style="font-size:20px;font-weight:700;color:var(--text);">$2.50</span><span style="color:var(--text-muted);"> /lead</span><br><span style="font-size:12px;color:var(--text-muted);">Pay per lead. No commitment.</span></div>
+        <div><span style="font-size:20px;font-weight:700;color:var(--gold);">$49</span><span style="color:var(--text-muted);"> /month</span><br><span style="font-size:12px;color:var(--text-muted);">Unlimited leads. Full enrichment.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="section--sm" style="padding-top:0;">
     <div class="card">
       <h3 style="margin-bottom:16px;">3-Year Cost: You vs Competitors</h3>
       <div class="pricing-compare">
         <div class="pc-row pc-header"><span>Plan</span><span>Year 1</span><span>Year 2</span><span>Year 3</span><span>3-Year Total</span></div>
-        <div class="pc-row pc-us"><span>Granite Complete</span><span>$5,360</span><span>$360</span><span>$360</span><span>$6,080</span></div>
+        <div class="pc-row pc-us"><span>Granite ($500 + $400/mo)</span><span>$5,300</span><span>$4,800</span><span>$4,800</span><span>$14,900</span></div>
         <div class="pc-row"><span>ServiceTitan (3 techs)</span><span>$9,000+</span><span>$9,000+</span><span>$9,000+</span><span>$27,000+</span></div>
         <div class="pc-row"><span>Jobber Grow</span><span>$4,188</span><span>$4,188</span><span>$4,188</span><span>$12,564</span></div>
         <div class="pc-row"><span>SimPRO</span><span>$4,800</span><span>$4,800</span><span>$4,800</span><span>$14,400</span></div>
       </div>
-      <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-muted);">You own it. They rent to you forever. No AI. No leads. Generic tools.</p>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-muted);">Granite includes AI, lead generation, community network, and contractor intel. They don't.</p>
     </div>
   </section>
 
-  <!-- PRICING CARDS -->
+  <!-- CUSTOM BUILDS -->
   <section class="section--sm" style="padding-top:0;">
-    <div class="card-grid pricing-grid">
-
-      <div class="card pricing-card">
-        <div class="card-num">01</div>
-        <span class="badge badge--production">BUY ONCE</span>
-        <h3>Basic Dashboard</h3>
-        <div class="pricing-price">$249 &mdash; $497</div>
-        <div class="pricing-sub">One-time &bull; Own forever</div>
-        <div class="pricing-list">
-          <span>Trade-specific dashboard for 1 trade</span>
-          <span>Jobs, crew, scheduling, invoicing</span>
-          <span>Revenue &amp; performance analytics</span>
-          <span>Runs on your own Windows PC</span>
-          <span>30 days email support included</span>
-        </div>
-        <a href="#get-started" class="card-link">Get Started &rarr;</a>
-      </div>
-
-      <div class="card pricing-card">
-        <div class="card-num">02</div>
-        <span class="badge badge--production">BUY ONCE</span>
-        <h3>AI Dashboard</h3>
-        <div class="pricing-price">$500 &mdash; $600</div>
-        <div class="pricing-sub">One-time &bull; Own forever</div>
-        <div class="pricing-list">
-          <span>Everything in Basic, plus:</span>
-          <span>AI assistant built into dashboard</span>
-          <span>Trade-specific AI knowledge base</span>
-          <span>Runs locally &mdash; no cloud AI fees</span>
-        </div>
-        <a href="#get-started" class="card-link">Get Started &rarr;</a>
-      </div>
-
-      <div class="card pricing-card">
-        <div class="card-num">03</div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
         <span class="badge badge--rebuilding">CUSTOM</span>
-        <h3>Custom Build</h3>
-        <div class="pricing-price">$100 &mdash; $150<span>/hr</span></div>
-        <div class="pricing-sub">$500 minimum project</div>
-        <div class="pricing-list">
-          <span>Fully custom system built to your spec</span>
-          <span>Written scope before work begins</span>
-          <span>50% deposit, balance on delivery</span>
-        </div>
-        <a href="#get-started" class="card-link">Request Quote &rarr;</a>
+        <span style="font-family:var(--font-display);font-weight:700;color:var(--text);">Custom Build</span>
       </div>
-
-      <div class="card pricing-card pricing-card--featured">
-        <div class="card-num">&star;</div>
-        <span class="badge badge--production">MOST POPULAR</span>
-        <h3>Granite Standard</h3>
-        <div class="pricing-price">$250<span>/mo</span></div>
-        <div class="pricing-sub">$1,000 setup &bull; Cancel after 3 months</div>
-        <div class="pricing-list">
-          <span>Full trade dashboard + AI assistant</span>
-          <span>Customer Portal access</span>
-          <span>SendGrid email integration</span>
-          <span>Monthly updates &amp; improvements</span>
-          <span>Priority email support</span>
-          <span>No per-user fees — whole team, one price</span>
-          <span class="pricing-hl">&star; 14-day free Lead Hunter Pro trial</span>
-        </div>
-        <a href="#get-started" class="card-link">Get Started &rarr;</a>
-      </div>
-
-      <div class="card pricing-card">
-        <div class="card-num">05</div>
-        <span class="badge badge--rebuilding">SUBSCRIPTION</span>
-        <h3>Granite Pro</h3>
-        <div class="pricing-price">$500<span>/mo</span></div>
-        <div class="pricing-sub">$1,000 setup &bull; Full leads system</div>
-        <div class="pricing-list">
-          <span>Everything in Standard, plus:</span>
-          <span>Lead Hunter Pro v2 &mdash; automated leads</span>
-          <span>Drip email sequences via SendGrid</span>
-          <span>45-day compliance wipe</span>
-          <span>Priority email &amp; phone support</span>
-        </div>
-        <a href="#get-started" class="card-link">Get Started &rarr;</a>
-      </div>
-
-      <div class="card pricing-card pricing-card--complete">
-        <div class="card-num">&diams;</div>
-        <span class="badge badge--production">ALL-IN</span>
-        <h3>Granite Complete</h3>
-        <div class="pricing-price">$5,000</div>
-        <div class="pricing-sub">One-time &bull; Everything &bull; $30/mo Browser only</div>
-        <div class="pricing-list">
-          <span>Every dashboard, every trade</span>
-          <span>AI assistant in every dashboard</span>
-          <span>Lead Hunter Pro v2 &mdash; full system</span>
-          <span>Empire + Portal + DocVault + Studio</span>
-          <span>Installation, configuration &amp; training</span>
-          <span>No per-user fees. No cloud fees. Ever.</span>
-          <span class="pricing-hl">&star; Break-even vs competitors at 10 months</span>
-        </div>
-        <a href="#get-started" class="card-link">Get Started &rarr;</a>
-      </div>
-
+      <div class="pricing-price">$100 &mdash; $150<span>/hr</span></div>
+      <div class="pricing-sub">$500 minimum project</div>
+      <p style="margin-top:8px;">Need something specific? Custom systems built to your spec. Written scope before work begins. 50% deposit, balance on delivery.</p>
     </div>
   </section>
 
@@ -168,7 +138,7 @@
             <select name="trade"><option value="">Select...</option><option value="hvac">HVAC</option><option value="plumbing">Plumbing</option><option value="landscaping">Landscaping</option><option value="construction">Construction</option><option value="electrical">Electrical</option><option value="roofing">Roofing</option><option value="auto">Mechanic / Auto</option><option value="steel">Steel Fabrication</option><option value="winter">Snow / Winter</option><option value="other">Other</option></select>
           </div>
           <div class="pf-field"><label>Interested In</label>
-            <select name="interest"><option value="">Select...</option><option value="basic">Basic Dashboard</option><option value="ai">AI Dashboard</option><option value="standard">Granite Standard</option><option value="pro">Granite Pro</option><option value="complete">Granite Complete</option><option value="custom">Custom Build</option><option value="demo">Just a demo</option></select>
+            <select name="interest"><option value="">Select...</option><option value="dashboard">Dashboard + Platform ($500 + $400/mo)</option><option value="leads">Lead Hunter Pro</option><option value="custom">Custom Build</option><option value="demo">Just a demo</option></select>
           </div>
         </div>
         <div class="pf-field"><label>About Your Business</label><textarea name="message" rows="3" placeholder="What tools do you use now? What problems are you trying to solve?"></textarea></div>
@@ -178,5 +148,5 @@
     {% endif %}
   </section>
 
-</div><!-- .container -->
+</div>
 {% endblock %}
