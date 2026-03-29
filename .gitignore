@@ -2,3 +2,10 @@
 __pycache__/
 *.pyc
 .env
+*_backup_*.py
+*_backup_*.html
+app_temp.py
+app_backup_*.py
+templates/*_temp.html
+templates/*_backup_*.html
+_*.py

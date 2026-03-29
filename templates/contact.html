@@ -9,7 +9,39 @@
     <p class="section-desc">Whether you're a trades business looking for automation, an investor interested in the vision, or a developer who wants to connect — reach out.</p>
   </section>
 
+  <section class="section--sm" style="padding-top:0;">
+    {% if success %}
+    <div class="card" style="max-width:500px;text-align:center;margin:0 auto;">
+      <div style="font-size:2.5rem;color:var(--green);margin-bottom:12px;">&#10003;</div>
+      <h3>Message Sent!</h3>
+      <p style="color:var(--text-muted);margin-top:8px;">We'll get back to you within 24 hours. Lorie or Jon will follow up directly.</p>
+    </div>
+    {% else %}
+    <div style="max-width:600px;margin:0 auto;">
+      <form method="POST" action="/contact" class="pricing-form">
+        <div class="pf-row">
+          <div class="pf-field"><label>Your Name *</label><input type="text" name="name" required placeholder="John Smith"></div>
+          <div class="pf-field"><label>Business Name</label><input type="text" name="business" placeholder="Smith HVAC LLC"></div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="john@smithhvac.com"></div>
+          <div class="pf-field"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-field"><label>Your Trade</label>
+            <select name="trade"><option value="">Select...</option><option value="hvac">HVAC</option><option value="plumbing">Plumbing</option><option value="landscaping">Landscaping</option><option value="construction">Construction</option><option value="electrical">Electrical</option><option value="roofing">Roofing</option><option value="auto">Mechanic / Auto</option><option value="steel">Steel Fabrication</option><option value="winter">Snow / Winter</option><option value="paving">Paving</option><option value="concrete">Concrete</option><option value="excavation">Excavation</option><option value="other">Other</option></select>
+          </div>
+          <div class="pf-field">&nbsp;</div>
+        </div>
+        <div class="pf-field"><label>How Can We Help?</label><textarea name="message" rows="3" placeholder="Tell us about your business and what you're looking for."></textarea></div>
+        <button type="submit" class="hero-cta" style="width:100%;justify-content:center;margin-top:8px;">Send Message &rarr;</button>
+      </form>
+    </div>
+    {% endif %}
+  </section>
+
   <section class="section--sm">
+    <h3 style="text-align:center;margin-bottom:16px;">Or Reach Us Directly</h3>
     <div class="contact-grid">
       <a href="mailto:granitemodels@gmail.com" class="contact-card">
         <div class="contact-icon">✉️</div>

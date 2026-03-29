@@ -2,9 +2,9 @@
 GRANITE MODELS — Portfolio Website v5
 7-page static portfolio site served via Flask
 """
-from flask import Flask, render_template, redirect, send_from_directory, request, flash
+from flask import Flask, render_template, redirect, send_from_directory, request, flash, jsonify
 from readmes import READMES
-import os
+import os, json
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'granite-2026-portfolio')
@@ -237,6 +237,40 @@ SOCIAL = {
     'email': 'granitemodels@gmail.com',
 }
 
+def _notify_lead(name, email, phone, business, trade, interest, message, source='pricing'):
+    """Send lead notification to Lorie and Jon via email. Never crashes the app."""
+    sg_key = os.environ.get('SENDGRID_API_KEY', '')
+    body_html = f"""
+    <h2>New Lead from granitemodels.store ({source} page)</h2>
+    <table style="border-collapse:collapse;font-family:Arial;">
+    <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Name</td><td style="padding:8px;border-bottom:1px solid #ddd;">{name}</td></tr>
+    <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Email</td><td style="padding:8px;border-bottom:1px solid #ddd;">{email}</td></tr>
+    <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Business</td><td style="padding:8px;border-bottom:1px solid #ddd;">{business}</td></tr>
+    <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Phone</td><td style="padding:8px;border-bottom:1px solid #ddd;">{phone}</td></tr>
+    <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Trade</td><td style="padding:8px;border-bottom:1px solid #ddd;">{trade}</td></tr>
+    <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Interested In</td><td style="padding:8px;border-bottom:1px solid #ddd;">{interest}</td></tr>
+    <tr><td style="padding:8px;font-weight:bold;">Message</td><td style="padding:8px;">{message}</td></tr>
+    </table>"""
+    subject = f'[NEW LEAD] {name} - {interest} - {trade}'
+    headers = {'Authorization': f'Bearer {sg_key}', 'Content-Type': 'application/json'}
+    try:
+        import requests as _req
+        # Send to Lorie
+        _req.post('https://api.sendgrid.com/v3/mail/send', json={
+            'personalizations': [{'to': [{'email': 'lorieprymas@gmail.com'}], 'subject': subject}],
+            'from': {'email': 'support@granitemodels.store', 'name': 'Granite Models'},
+            'content': [{'type': 'text/html', 'value': body_html}]
+        }, headers=headers, timeout=10)
+        # Send to Jon
+        _req.post('https://api.sendgrid.com/v3/mail/send', json={
+            'personalizations': [{'to': [{'email': 'granitemodels@gmail.com'}], 'subject': subject}],
+            'from': {'email': 'support@granitemodels.store', 'name': 'Granite Models'},
+            'content': [{'type': 'text/html', 'value': body_html}]
+        }, headers=headers, timeout=10)
+    except Exception as e:
+        print(f'[NOTIFY] Error: {e}')
+
+
 @app.route('/')
 def index():
     flagships = {k: v for k, v in PROJECTS.items() if k in ('lead-hunter-pro', 'file-processor', 'granite-tester')}
@@ -266,9 +300,18 @@ def process():
 def roadmap():
     return render_template('roadmap.html', social=SOCIAL)
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html', social=SOCIAL)
+    if request.method == 'POST':
+        name = request.form.get('name', '')
+        email = request.form.get('email', '')
+        phone = request.form.get('phone', '')
+        business = request.form.get('business', '')
+        trade = request.form.get('trade', '')
+        message = request.form.get('message', '')
+        _notify_lead(name, email, phone, business, trade, 'General Inquiry', message, source='contact')
+        return render_template('contact.html', social=SOCIAL, success=True)
+    return render_template('contact.html', social=SOCIAL, success=False)
 
 @app.route('/privacy')
 def privacy():
@@ -289,30 +332,7 @@ def pricing():
         trade = request.form.get('trade', '')
         interest = request.form.get('interest', '')
         message = request.form.get('message', '')
-        # Send via SendGrid
-        try:
-            import requests as _req
-            sg_key = 'SG.HvOfqghiS0O7d-0xHeNtUA.9OhSEuFmDIOc5yhyWL8lfn1wh1jg1oPC7S'
-            body_html = f"""
-            <h2>New Lead from granitemodels.store</h2>
-            <table style="border-collapse:collapse;font-family:Arial;">
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Name</td><td style="padding:8px;border-bottom:1px solid #ddd;">{name}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Email</td><td style="padding:8px;border-bottom:1px solid #ddd;">{email}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Business</td><td style="padding:8px;border-bottom:1px solid #ddd;">{business}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Phone</td><td style="padding:8px;border-bottom:1px solid #ddd;">{phone}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Trade</td><td style="padding:8px;border-bottom:1px solid #ddd;">{trade}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #ddd;">Interested In</td><td style="padding:8px;border-bottom:1px solid #ddd;">{interest}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;">Message</td><td style="padding:8px;">{message}</td></tr>
-            </table>
-            """
-            _req.post('https://api.sendgrid.com/v3/mail/send', json={
-                'personalizations': [{'to': [{'email': 'jon@granitemodels.store'}]}],
-                'from': {'email': 'leads@granitemodels.store', 'name': 'Granite Store'},
-                'subject': f'[NEW LEAD] {name} - {interest} - {trade}',
-                'content': [{'type': 'text/html', 'value': body_html}]
-            }, headers={'Authorization': f'Bearer {sg_key}', 'Content-Type': 'application/json'}, timeout=10)
-        except Exception as e:
-            print(f'[SendGrid] Error: {e}')
+        _notify_lead(name, email, phone, business, trade, interest, message, source='pricing')
         return render_template('pricing.html', social=SOCIAL, success=True)
     return render_template('pricing.html', social=SOCIAL, success=False)
 
@@ -333,6 +353,63 @@ def sitemap():
         xml += f'  <url><loc>https://granitemodels.store{p}</loc></url>\n'
     xml += '</urlset>'
     return xml, 200, {'Content-Type': 'application/xml'}
+
+# ═══ LIVE CHAT (Groq AI) ═══
+GROQ_API_KEY = os.environ.get('GROQ_API_KEY', '')
+CHAT_SYSTEM_PROMPT = """You are a friendly, professional customer service assistant for Granite Models Automations (GMA).
+GMA builds AI-powered business management software for the trades industry — landscaping, HVAC, plumbing, steel fabrication, construction, electrical, and 16 more trades.
+
+KEY FACTS:
+- Dashboards: $500 setup + $400/month. All core features included. No per-user fees.
+- Lead generation via Lead Hunter Pro: $250/month for 30 leads, or $10/lead individually.
+- Contact Lorie Prymas for sales: lorieprymas@gmail.com
+- Based in Manchester, New Hampshire.
+- Founded by Jon Anderson, 30 years in the trades.
+- 50+ production systems, 22 trade-specific dashboards.
+- Free Granite Trades Network membership with every subscription.
+
+RULES:
+- Keep responses concise (2-3 sentences max).
+- If someone wants pricing details, a demo, or to sign up, tell them to visit the Pricing page or email Lorie.
+- If you don't know something specific, say you'll connect them with the team.
+- Never make up features or pricing that isn't listed above.
+- Be warm and conversational, not robotic."""
+
+_chat_histories = {}
+
+@app.route('/api/chat', methods=['POST'])
+def api_chat():
+    data = request.get_json()
+    msg = (data.get('message') or '').strip()
+    sid = data.get('session_id', 'anon')
+    if not msg:
+        return jsonify({'reply': 'Please type a message.'}), 400
+    history = _chat_histories.get(sid, [])
+    history.append({'role': 'user', 'content': msg})
+    if len(history) > 16:
+        history = history[-16:]
+    messages = [{'role': 'system', 'content': CHAT_SYSTEM_PROMPT}] + history
+    reply = None
+    try:
+        import requests as _req
+        r = _req.post('https://api.groq.com/openai/v1/chat/completions', json={
+            'model': 'llama-3.1-8b-instant', 'max_tokens': 300,
+            'temperature': 0.7, 'messages': messages
+        }, headers={'Authorization': f'Bearer {GROQ_API_KEY}',
+                    'Content-Type': 'application/json'}, timeout=12)
+        if r.status_code == 200:
+            reply = r.json()['choices'][0]['message']['content']
+    except Exception as e:
+        print(f'[CHAT] Groq error: {e}')
+    if not reply:
+        reply = "I'm having trouble connecting right now. Please email us at granitemodels@gmail.com and we'll get back to you within 24 hours."
+    history.append({'role': 'assistant', 'content': reply})
+    _chat_histories[sid] = history
+    # If escalation needed, email Lorie
+    if any(w in msg.lower() for w in ['speak to someone', 'talk to a person', 'human', 'call me', 'phone']):
+        _notify_lead(data.get('name', 'Chat Visitor'), data.get('email', ''),
+                     '', '', '', 'Live Chat Escalation', msg, source='chat')
+    return jsonify({'reply': reply, 'session_id': sid})
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5055))
