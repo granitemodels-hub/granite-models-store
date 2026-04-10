@@ -377,6 +377,18 @@ RULES:
 
 _chat_histories = {}
 
+@app.route('/api/env-check')
+def env_check():
+    import os
+    key = os.environ.get('OPENROUTER_API_KEY', '')
+    all_keys = [k for k in os.environ if 'KEY' in k or 'OPEN' in k or 'ROUTER' in k]
+    return jsonify({
+        'has_key': bool(key),
+        'key_len': len(key),
+        'key_prefix': key[:6] if key else 'EMPTY',
+        'env_vars_with_key': all_keys
+    })
+
 @app.route('/api/chat', methods=['POST'])
 def api_chat():
     data = request.get_json()
