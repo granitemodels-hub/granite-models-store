@@ -356,6 +356,23 @@ def sitemap():
 
 # ═══ LIVE CHAT (Groq AI) ═══
 GROQ_API_KEY = os.environ.get('GROQ_API_KEY', '')
+if not GROQ_API_KEY:
+    # Render mounts secret files to /etc/secrets/<filename>
+    for _sf in ['/etc/secrets/.env', '/etc/secrets/GROQ_API_KEY']:
+        try:
+            with open(_sf, 'r') as _f:
+                for _line in _f:
+                    _line = _line.strip()
+                    if _line.startswith('GROQ_API_KEY='):
+                        GROQ_API_KEY = _line.split('=', 1)[1].strip()
+                        break
+                    elif not '=' in _line and _line.startswith('gsk_'):
+                        GROQ_API_KEY = _line
+                        break
+            if GROQ_API_KEY:
+                break
+        except FileNotFoundError:
+            pass
 CHAT_SYSTEM_PROMPT = """You are a friendly, professional customer service assistant for Granite Models Automations (GMA).
 GMA builds AI-powered business management software for the trades industry — landscaping, HVAC, plumbing, steel fabrication, construction, electrical, and 16 more trades.
 
