@@ -394,6 +394,29 @@ RULES:
 
 _chat_histories = {}
 
+@app.route('/api/chat-debug')
+def chat_debug():
+    import os
+    key = os.environ.get('GROQ_API_KEY', '')
+    secret_files = []
+    for sf in ['/etc/secrets/.env', '/etc/secrets/GROQ_API_KEY']:
+        try:
+            with open(sf, 'r') as f:
+                secret_files.append(f'{sf}: EXISTS ({len(f.read())} bytes)')
+        except FileNotFoundError:
+            secret_files.append(f'{sf}: NOT FOUND')
+        except Exception as e:
+            secret_files.append(f'{sf}: ERROR {e}')
+    return jsonify({
+        'env_var_set': bool(key),
+        'env_var_length': len(key),
+        'env_var_prefix': key[:8] if key else 'EMPTY',
+        'groq_key_in_app': bool(GROQ_API_KEY),
+        'groq_key_app_len': len(GROQ_API_KEY),
+        'groq_key_app_prefix': GROQ_API_KEY[:8] if GROQ_API_KEY else 'EMPTY',
+        'secret_files': secret_files,
+    })
+
 @app.route('/api/chat', methods=['POST'])
 def api_chat():
     data = request.get_json()
