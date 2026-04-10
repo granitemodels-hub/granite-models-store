@@ -354,25 +354,8 @@ def sitemap():
     xml += '</urlset>'
     return xml, 200, {'Content-Type': 'application/xml'}
 
-# ═══ LIVE CHAT (Groq AI) ═══
-GROQ_API_KEY = os.environ.get('GROQ_API_KEY', '')
-if not GROQ_API_KEY:
-    # Render mounts secret files to /etc/secrets/<filename>
-    for _sf in ['/etc/secrets/.env', '/etc/secrets/GROQ_API_KEY']:
-        try:
-            with open(_sf, 'r') as _f:
-                for _line in _f:
-                    _line = _line.strip()
-                    if _line.startswith('GROQ_API_KEY='):
-                        GROQ_API_KEY = _line.split('=', 1)[1].strip()
-                        break
-                    elif not '=' in _line and _line.startswith('gsk_'):
-                        GROQ_API_KEY = _line
-                        break
-            if GROQ_API_KEY:
-                break
-        except FileNotFoundError:
-            pass
+# ═══ LIVE CHAT (OpenRouter AI) ═══
+CHAT_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 CHAT_SYSTEM_PROMPT = """You are a friendly, professional customer service assistant for Granite Models Automations (GMA).
 GMA builds AI-powered business management software for the trades industry — landscaping, HVAC, plumbing, steel fabrication, construction, electrical, and 16 more trades.
 
@@ -394,29 +377,6 @@ RULES:
 
 _chat_histories = {}
 
-@app.route('/api/chat-debug')
-def chat_debug():
-    import os
-    key = os.environ.get('GROQ_API_KEY', '')
-    secret_files = []
-    for sf in ['/etc/secrets/.env', '/etc/secrets/GROQ_API_KEY']:
-        try:
-            with open(sf, 'r') as f:
-                secret_files.append(f'{sf}: EXISTS ({len(f.read())} bytes)')
-        except FileNotFoundError:
-            secret_files.append(f'{sf}: NOT FOUND')
-        except Exception as e:
-            secret_files.append(f'{sf}: ERROR {e}')
-    return jsonify({
-        'env_var_set': bool(key),
-        'env_var_length': len(key),
-        'env_var_prefix': key[:8] if key else 'EMPTY',
-        'groq_key_in_app': bool(GROQ_API_KEY),
-        'groq_key_app_len': len(GROQ_API_KEY),
-        'groq_key_app_prefix': GROQ_API_KEY[:8] if GROQ_API_KEY else 'EMPTY',
-        'secret_files': secret_files,
-    })
-
 @app.route('/api/chat', methods=['POST'])
 def api_chat():
     data = request.get_json()
@@ -432,15 +392,17 @@ def api_chat():
     reply = None
     try:
         import requests as _req
-        r = _req.post('https://api.groq.com/openai/v1/chat/completions', json={
-            'model': 'llama-3.1-8b-instant', 'max_tokens': 300,
+        r = _req.post('https://openrouter.ai/api/v1/chat/completions', json={
+            'model': 'meta-llama/llama-3.1-8b-instruct', 'max_tokens': 300,
             'temperature': 0.7, 'messages': messages
-        }, headers={'Authorization': f'Bearer {GROQ_API_KEY}',
-                    'Content-Type': 'application/json'}, timeout=12)
+        }, headers={'Authorization': f'Bearer {CHAT_API_KEY}',
+                    'Content-Type': 'application/json',
+                    'HTTP-Referer': 'https://granitemodels.store',
+                    'X-Title': 'Granite Models Store'}, timeout=12)
         if r.status_code == 200:
             reply = r.json()['choices'][0]['message']['content']
     except Exception as e:
-        print(f'[CHAT] Groq error: {e}')
+        print(f'[CHAT] OpenRouter error: {e}')
     if not reply:
         reply = "I'm having trouble connecting right now. Please email us at granitemodels@gmail.com and we'll get back to you within 24 hours."
     history.append({'role': 'assistant', 'content': reply})
