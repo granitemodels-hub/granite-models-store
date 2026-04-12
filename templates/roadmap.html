@@ -1,130 +1,96 @@
 {% extends "base.html" %}
-{% block title %}Roadmap — Where the Empire Is Headed | Granite Models{% endblock %}
-{% block description %}Roadmap showing the future of the trades industry with robotics, IoT sensors, GPS controlled equipment and automated trade businesses.{% endblock %}
-{% block og_title %}AI Powered Trades Industry Roadmap{% endblock %}
+{% block title %}Roadmap — Granite Models Automations{% endblock %}
+{% block description %}What's next for Granite Models — new trade dashboards, community platform, mobile tools, and more.{% endblock %}
 
 {% block content %}
 <div class="container">
   <section class="section">
     <p class="section-label">ROADMAP</p>
-    <h2 class="section-title">Where the Empire Is Headed</h2>
-    <p class="section-desc">Granite Models Automations isn't one product — it's an ecosystem. Ten corporate sectors, each with specialized tools, building toward a fully automated business.</p>
-    
+    <h2 class="section-title">What We're Building Next</h2>
+    <p class="section-desc">Granite Models is an ecosystem of trade-specific tools. Here's where we're headed — built by demand, not by guesswork.</p>
+
     <section id="roadmap-container">
       <div class="roadmap-wrapper">
-        <img src="/static/roadmap-pipeline.jpg" width="1792" height="1024" alt="AI powered roadmap showing the evolution of the trades industry with robotics, IoT sensors, GPS equipment, autonomous work trucks and trade business acquisitions" class="roadmap-image" loading="lazy" decoding="async">
+        <img src="/static/roadmap-pipeline.jpg" width="1792" height="1024" alt="Roadmap showing the evolution of trades technology" class="roadmap-image" loading="lazy" decoding="async">
       </div>
     </section>
   </section>
 
   <section class="section--sm">
-    <p class="section-label">THE 10 SECTORS</p>
-    <div class="roadmap-grid">
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">📊</span> Sales & Revenue</h3>
-        <p>Lead Hunter Pro, Sales Pipeline, Quote Generator, Proposal Generator, Referral Tracker. <strong style="color:var(--green)">Core systems complete.</strong></p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">📣</span> Marketing & Content</h3>
-        <p>Email Campaign Engine, Social Media Manager, Review Manager, Content Calendar. Granite Design Studio planned for Phase 7.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">👥</span> Client Management</h3>
-        <p>Client portal with self-service, geographic preferences, plan tiers, and feedback system. Built into Lead Hunter Pro.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">💰</span> Finance</h3>
-        <p>Invoice automation, expense tracking, budget monitoring, Stripe integration. Full financial analytics built into every trade dashboard.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">⚙️</span> Operations</h3>
-        <p>Empire Dashboard (master command center), trades dashboards for 6 industries, job scheduling, crew management, equipment tracking.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">💬</span> Communications</h3>
-        <p>Customer support bot (planned), meeting notes, knowledge base, AI assistant with 4-provider failover (Anthropic, Ollama, OpenAI, keyword).</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">⚖️</span> Legal & Compliance</h3>
-        <p>CAN-SPAM compliance, DNC management, nationwide state regulations coverage, 45-day data wipe, GDPR-ready architecture.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">📈</span> Analytics & Intelligence</h3>
-        <p>Pipeline metrics, revenue forecasting, lead scoring analytics, enrichment stats, PRR testing reports, cross-system health monitoring.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">📡</span> IoT & Smart Systems</h3>
-        <p>Real-time sensor monitoring for shop floors and job sites. Equipment health tracking, fleet GPS, environmental controls, and automated alerting. Originally prototyped in the steel fabrication dashboard.</p>
-      </div>
-      <div class="roadmap-card">
-        <h3><span class="roadmap-icon">🤖</span> Robotics & Automation</h3>
-        <p>Automated material dispatch, computer vision quality inspection, and programmable robotic arm integration for trades shops. Visual programming so operators don't need to write code.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--sm">
-    <div class="patent-box">
-      <h3>🔒 Patent-Pending Innovations</h3>
-      <p style="margin-bottom:20px">Three systems in active development incorporate novel methods that are being prepared for patent filing. High-level descriptions below — implementation details are protected.</p>
-    </div>
-
-    <div class="card-grid" style="margin-top:20px">
+    <p class="section-label">WHAT'S COMING NEXT</p>
+    <div class="card-grid">
       <div class="card">
-        <h3 style="color:var(--gold)">OmniVerse Apex Predator</h3>
-        <span class="badge badge--development">Patent Pending</span>
-        <p style="margin-top:12px">Consumer-grade hardware optimization system that achieves performance levels previously requiring dedicated research infrastructure. Proprietary hybrid computation methods enable simulation speeds of 43M+ FPS on standard gaming hardware (RTX 3060/16GB RAM) — over 1,000x faster than traditional lab setups. Incorporates self-evolving kernel optimization, infinite context memory architecture, and real-time physics rendering at 120FPS.</p>
+        <h3>More Trade Dashboards</h3>
+        <span class="badge badge--development">IN DEVELOPMENT</span>
+        <p style="margin-top:12px">HVAC, Plumbing, Construction, Electrical, Roofing, Mechanic — each built on the same proven architecture as our Landscape Dashboard. Same depth, customized for your trade. Targeting Q3–Q4 2026.</p>
       </div>
       <div class="card">
-        <h3 style="color:var(--gold)">Harvester Agent</h3>
-        <span class="badge badge--development">Patent Pending</span>
-        <p style="margin-top:12px">Fully autonomous CPU mining orchestration system designed for consumer hardware. Docker-based architecture with cloud resource optimization, automated workload distribution, and real-time profit monitoring. Targets $100/day net profit on standard consumer PCs with zero manual intervention after initial deployment. Includes Telegram alerting and a live profit dashboard.</p>
-      </div>
-      <div class="card">
-        <h3 style="color:var(--gold)">Ironworks Engine</h3>
-        <span class="badge badge--development">Patent Pending</span>
-        <p style="margin-top:12px">Complete 1-click safe build orchestrator for the entire Granite ecosystem. One master system that orchestrates and self-builds all 60+ agents and systems with professional-grade safety controls: human approval gates at every level, automatic error retries, kill switches per component, and auditable logging. Full deployment from zero to production in 60 minutes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--sm">
-    <p class="section-label">INFRASTRUCTURE</p>
-    <div class="about-grid" style="gap:24px">
-      <div class="skills-card">
-        <h3>Hardware</h3>
-        <div class="skill-item"><span class="skill-check">▸</span> Two Dell OptiPlex 7050 servers (16GB + 8GB RAM)</div>
-        <div class="skill-item"><span class="skill-check">▸</span> Fiber internet connection</div>
-        <div class="skill-item"><span class="skill-check">▸</span> Render cloud hosting (current)</div>
-        <div class="skill-item"><span class="skill-check">▸</span> IONOS domain + email forwarding</div>
-        <div class="skill-item"><span class="skill-check">▸</span> SendGrid authenticated domain</div>
-      </div>
-      <div class="skills-card">
-        <h3>The Team</h3>
-        <div class="skill-item"><span class="skill-check">▸</span> Jon Anderson — Founder, architect, sole developer</div>
-        <div class="skill-item"><span class="skill-check">▸</span> Mom — Marketing, operations, day-to-day management</div>
-        <div class="skill-item"><span class="skill-check">▸</span> AI assistants — Claude, Ollama (llama3.1), integrated into workflow</div>
-        <div class="skill-item"><span class="skill-check">▸</span> Goal: Fully automated business operations by end of 2026</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--sm">
-    <p class="section-label">PLANNED PROJECTS</p>
-    <div class="card-grid" style="max-width:900px">
-      <div class="card">
-        <h3>Granite Design Studio</h3>
-        <p>Zero-cost design workspace. Guided workflow, free asset sources only, video editing for Reels/TikTok/Shorts. Planned in 7 phases, Phase 7 = SaaS conversion.</p>
-      </div>
-      <div class="card">
-        <h3>Remaining Trades Dashboards</h3>
-        <p>HVAC, Plumbing, Construction, Mechanic — all following the Landscape Dashboard reference build. 49 tables, 67 templates, role-based security.</p>
+        <h3>Granite Browser</h3>
+        <span class="badge badge--development">COMING SOON</span>
+        <p style="margin-top:12px">Trade community platform: GraniteChat, Job Board, Contractor Directory, Safety Check-In, and Verification system. $30/mo — locked in at that price for all current subscribers.</p>
       </div>
       <div class="card">
         <h3>Client Portal</h3>
-        <p>Self-service portal for SaaS subscribers at port 8050. Account management, lead access, billing, support — the customer-facing side of the Empire.</p>
+        <span class="badge badge--development">IN DEVELOPMENT</span>
+        <p style="margin-top:12px">Self-service portal for your customers. Job status, billing, communication — a professional front door that runs itself. No more phone tag.</p>
+      </div>
+      <div class="card">
+        <h3>Mobile Dashboard</h3>
+        <span class="badge badge--planned">PLANNED</span>
+        <p style="margin-top:12px">Access your dashboard, leads, and crew schedule from your phone. Built for the job site, not the office.</p>
       </div>
     </div>
+  </section>
+
+  <section class="section--sm">
+    <p class="section-label">THE PLATFORM</p>
+    <h3 class="section-title" style="margin-bottom:40px">10 Sectors, One Ecosystem</h3>
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">📊</span> Sales & Revenue</h3>
+        <p>Lead generation, sales pipeline, quote builder, proposal generator, and referral tracking. Turn prospects into paying customers automatically.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">📣</span> Marketing & Content</h3>
+        <p>Email campaigns, social media management, review monitoring, and content scheduling. Stay visible without spending hours on marketing.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">👥</span> Client Management</h3>
+        <p>Customer portals with self-service access, geographic preferences, service tiers, and built-in feedback. Keep clients happy and coming back.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">💰</span> Finance</h3>
+        <p>Invoice automation, expense tracking, budget monitoring, and Stripe payment processing. Know your numbers without spreadsheet headaches.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">⚙️</span> Operations</h3>
+        <p>Job scheduling, crew management, equipment tracking, and real-time status dashboards. Run your day from one screen.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">💬</span> Communications</h3>
+        <p>AI support bot, automated follow-ups, knowledge base, and team messaging. Never miss a customer question.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">⚖️</span> Legal & Compliance</h3>
+        <p>CAN-SPAM compliance, DNC management, data retention policies, and audit trails. Stay compliant without thinking about it.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">📈</span> Analytics & Intelligence</h3>
+        <p>Pipeline metrics, revenue forecasting, lead scoring, and cross-system health monitoring. Data-driven decisions, not gut feelings.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">📡</span> IoT & Smart Systems</h3>
+        <p>Real-time sensor monitoring for equipment and job sites. Fleet GPS, environmental controls, and automated alerts.</p>
+      </div>
+      <div class="roadmap-card">
+        <h3><span class="roadmap-icon">🤖</span> Robotics & Automation</h3>
+        <p>Computer vision quality inspection, automated material dispatch, and programmable equipment integration for shop environments.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--sm" style="text-align:center;">
+    <a href="/pricing" class="hero-cta">See Pricing →</a>
   </section>
 </div>
 {% endblock %}

@@ -284,6 +284,24 @@ def story():
 def systems():
     return render_template('systems.html', projects=PROJECTS, sectors=SECTORS, social=SOCIAL)
 
+@app.route('/solutions')
+def solutions():
+    return render_template('solutions.html', social=SOCIAL)
+
+@app.route('/leads', methods=['GET', 'POST'])
+def leads():
+    if request.method == 'POST':
+        name = request.form.get('name', '')
+        email = request.form.get('email', '')
+        business = request.form.get('business', '')
+        phone = request.form.get('phone', '')
+        trade = request.form.get('trade', '')
+        service_area = request.form.get('service_area', '')
+        message = request.form.get('message', '')
+        _notify_lead(name, email, phone, business, trade, 'Lead Generation Interest', f'Service Area: {service_area}\n{message}', source='leads')
+        return render_template('leads.html', social=SOCIAL, success=True)
+    return render_template('leads.html', social=SOCIAL, success=False)
+
 @app.route('/project/<slug>')
 def project_detail(slug):
     p = PROJECTS.get(slug)
@@ -346,7 +364,7 @@ def serve_video(filename):
 
 @app.route('/sitemap.xml')
 def sitemap():
-    pages = ['/', '/story', '/systems', '/process', '/roadmap', '/pricing', '/contact']
+    pages = ['/', '/solutions', '/leads', '/pricing', '/roadmap', '/contact', '/story', '/systems', '/process']
     pages += [f'/project/{slug}' for slug in PROJECTS]
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for p in pages:
@@ -385,17 +403,17 @@ CHAT_SYSTEM_PROMPT = """You are a friendly, professional customer service assist
 GMA builds AI-powered business management software for the trades industry — landscaping, HVAC, plumbing, steel fabrication, construction, electrical, and 16 more trades.
 
 KEY FACTS:
-- Dashboards: $500 setup + $400/month. All core features included. No per-user fees.
-- Lead generation via Lead Hunter Pro: $250/month for 30 leads, or $10/lead individually.
-- Contact Lorie Prymas for sales: lorieprymas@gmail.com
-- Based in Manchester, New Hampshire.
-- Founded by Jon Anderson, 30 years in the trades.
+- Granite Trades Platform: $999 onboarding + $600/month. Full dashboard, no per-user fees. QuickBooks and Excel included free.
+- Granite Pro: $999 onboarding + $800/month. Everything in Trades Platform PLUS Lead Hunter Pro v2 with capped lead delivery (4 quality + 6 Class B per week).
+- Developer Templates: From $250 (basic) to $400 (larger systems). One-time purchase, source code.
+- Pay-per-lead: 5 tiers from $45 to $190 based on job value. Class B leads $20 each.
+- Based in New Hampshire. Founded by Jon Anderson, 30 years in the trades.
 - 50+ production systems, 22 trade-specific dashboards.
-- Free Granite Trades Network membership with every subscription.
+- Granite Browser community platform coming soon at $30/month.
 
 RULES:
 - Keep responses concise (2-3 sentences max).
-- If someone wants pricing details, a demo, or to sign up, tell them to visit the Pricing page or email Lorie.
+- If someone wants pricing details, a demo, or to sign up, direct them to the Pricing page or email granitemodels@gmail.com.
 - If you don't know something specific, say you'll connect them with the team.
 - Never make up features or pricing that isn't listed above.
 - Be warm and conversational, not robotic."""

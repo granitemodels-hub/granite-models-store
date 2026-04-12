@@ -584,6 +584,24 @@ img { max-width: 100%; display: block; }
 }
 .pricing-watermark + .container { position: relative; z-index: 1; }
 
+/* Lead Tier Table */
+.lead-tier-table { display: flex; flex-direction: column; gap: 2px; margin-bottom: 32px; }
+.lead-tier-row {
+  display: grid; grid-template-columns: 80px 140px 120px 1fr; gap: 12px; align-items: center;
+  padding: 14px 20px; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 8px; font-size: 14px; color: var(--text-secondary);
+}
+.lead-tier-header {
+  font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.5px; background: transparent; border: none;
+}
+.lead-tier-classb {
+  background: rgba(74,222,128,0.04); border-color: rgba(74,222,128,0.15);
+}
+@media (max-width: 600px) {
+  .lead-tier-row { grid-template-columns: 1fr 1fr; gap: 8px; font-size: 13px; }
+  .lead-tier-header { display: none; }
+}
 
 /* Legal Pages */
 .legal-content { max-width: 680px; font-size: 15px; line-height: 1.8; color: #ccc; }
