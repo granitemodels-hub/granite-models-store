@@ -502,7 +502,7 @@ img { max-width: 100%; display: block; }
 .about-text ul li strong { color: var(--text); }
 
 /* ═══ PRICING PAGE ═══ */
-.pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .pricing-card { display: flex; flex-direction: column; }
 .pricing-card--featured {
   border-color: var(--border-hover);
