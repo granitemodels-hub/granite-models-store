@@ -1,41 +1,400 @@
 {% extends "base.html" %}
-{% block title %}Lead Generation — Granite Models Automations{% endblock %}
-{% block description %}Qualified leads for your trades business. 5 pricing tiers from $45 to $190 per lead. Powered by Lead Hunter Pro v2.{% endblock %}
+{% block title %}Lead Pricing — Granite Models Automations{% endblock %}
+{% block description %}Exclusive contractor leads by job type. Pay per lead, no contracts. Territory exclusivity, verified homeowners, Stripe billing.{% endblock %}
 
 {% block content %}
+<div class="pricing-watermark"></div>
 <div class="container">
 
-  <section class="section" style="padding-top:20px;padding-bottom:4px;">
-    <p class="section-label">LEAD GENERATION</p>
-    <h2 class="section-title">Real Leads. Real Customers.</h2>
-    <p class="section-desc">Lead Hunter Pro v2 finds, scores, and verifies every lead before it reaches you. No cold lists, no recycled data. Territory exclusive.</p>
+  <!-- HERO HEADER -->
+  <section class="section" style="padding-bottom:40px;">
+    <p class="section-label">CONTRACTOR LEADS</p>
+    <h2 class="section-title">Exclusive Leads — Pay Per Lead, No Contracts</h2>
+    <p class="section-desc">Verified homeowner leads delivered to your inbox. Territory exclusivity. No monthly commitment required.</p>
   </section>
 
-  <section class="section--sm" style="padding-top:0;padding-bottom:8px;">
-    <h3 style="text-align:center;margin-bottom:12px;">Pay-Per-Lead Pricing</h3>
-    <div style="max-width:540px;margin:0 auto;font-size:14px;line-height:2;">
-      <p style="margin:0;display:flex;justify-content:space-between;"><span>Tier 1 — Under $500 (maintenance &amp; repair)</span><strong style="color:var(--gold);">$45</strong></p>
-      <p style="margin:0;display:flex;justify-content:space-between;"><span>Tier 2 — $500–$2K (mid-size residential)</span><strong style="color:var(--gold);">$105</strong></p>
-      <p style="margin:0;display:flex;justify-content:space-between;"><span>Tier 3 — $2K–$5K (large residential / small commercial)</span><strong style="color:var(--gold);">$150</strong></p>
-      <p style="margin:0;display:flex;justify-content:space-between;"><span>Tier 4 — $5K–$15K (major projects)</span><strong style="color:var(--gold);">$175</strong></p>
-      <p style="margin:0;display:flex;justify-content:space-between;"><span>Tier 5 — $15K+ (commercial &amp; high-value)</span><strong style="color:var(--gold);">$190</strong></p>
-      <p style="margin:0;display:flex;justify-content:space-between;"><span>Class B — Any value (unscored, volume available)</span><strong style="color:var(--green);">$20</strong></p>
+  <!-- LEAD PRICING TIERS -->
+  <section class="section--sm" style="padding-top:0;">
+    <div class="card">
+      <h3 style="margin-bottom:16px;">Lead Pricing by Job Value</h3>
+      <div class="lead-tier-table">
+        <div class="pc-row pc-header">
+          <span>Tier</span>
+          <span>Job Value Range</span>
+          <span>Per-Lead Price</span>
+        </div>
+        <div class="pc-row">
+          <span>Maintenance</span>
+          <span>$100–$1,000</span>
+          <span style="color:var(--gold);font-weight:600;">$45/lead</span>
+        </div>
+        <div class="pc-row">
+          <span>Small Project</span>
+          <span>$1,000–$3,000</span>
+          <span style="color:var(--gold);font-weight:600;">$105/lead</span>
+        </div>
+        <div class="pc-row">
+          <span>Mid-Range</span>
+          <span>$3,000–$5,000</span>
+          <span style="color:var(--gold);font-weight:600;">$150/lead</span>
+        </div>
+        <div class="pc-row">
+          <span>Premium</span>
+          <span>$5,000–$7,500</span>
+          <span style="color:var(--gold);font-weight:600;">$175/lead</span>
+        </div>
+        <div class="pc-row">
+          <span>High-Ticket</span>
+          <span>$7,500–$10,000+</span>
+          <span style="color:var(--gold);font-weight:600;">$190/lead</span>
+        </div>
+        <div class="pc-row" style="background-color:rgba(74,222,128,0.05);border-left:2px solid var(--green);">
+          <span style="color:var(--green);font-weight:600;">Class B</span>
+          <span style="color:var(--text-secondary);">7+ days old, any value</span>
+          <span style="color:var(--green);font-weight:600;">$20/lead</span>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:12px;font-size:13px;color:var(--text-muted);">All leads billed directly through Stripe. Territory exclusivity guaranteed. Max 3 contractors per lead.</p>
     </div>
-    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px;">Every lead includes: verified contact info, phone &amp; email, service area match, AI quality score, territory exclusivity, and a feedback loop.</p>
   </section>
 
-  <section class="section--sm" style="padding-top:0;padding-bottom:8px;">
-    <div class="card" style="border-left:2px solid var(--gold);padding:12px 16px;max-width:540px;margin:0 auto;">
-      <p style="margin:0;font-size:14px;"><strong style="color:var(--gold);">Want leads + a full dashboard?</strong>
-        Granite Pro ($800/mo) includes Lead Hunter Pro v2 — ~17 quality + ~26 Class B leads/month delivered automatically.
-        <a href="/pricing" style="color:var(--gold);font-weight:600;margin-left:8px;">See Pricing →</a>
-      </p>
+  <!-- BUY LEADS NOW -->
+  <section class="section--sm" style="padding-top:0;">
+    <div class="card">
+      <h3 style="margin-bottom:16px;">Buy Leads Now</h3>
+      <p style="margin-bottom:20px;font-size:15px;line-height:1.6;color:var(--text-secondary);">Pick a tier, enter your email, checkout with Stripe. Leads hit your inbox within minutes. Priority clients like Bryan Coloume get automatic discounts at checkout.</p>
+
+      <div class="lead-tier-table" style="margin-bottom:16px;">
+        <div class="pc-row pc-header">
+          <span>Tier</span>
+          <span>Price</span>
+          <span>Available</span>
+          <span>Quantity</span>
+          <span></span>
+        </div>
+        <div class="pc-row">
+          <span>Maintenance</span>
+          <span style="color:var(--gold);font-weight:600;">$45</span>
+          <span id="inv-maintenance">Loading...</span>
+          <input type="number" id="qty-maintenance" class="buy-qty-input" min="1" max="999" value="1" style="width:60px;">
+          <button class="buy-btn" data-tier="maintenance" data-price="45" style="padding:6px 12px;font-size:13px;">Buy →</button>
+        </div>
+        <div class="pc-row">
+          <span>Small Project</span>
+          <span style="color:var(--gold);font-weight:600;">$105</span>
+          <span id="inv-small_project">Loading...</span>
+          <input type="number" id="qty-small_project" class="buy-qty-input" min="1" max="999" value="1" style="width:60px;">
+          <button class="buy-btn" data-tier="small_project" data-price="105" style="padding:6px 12px;font-size:13px;">Buy →</button>
+        </div>
+        <div class="pc-row">
+          <span>Mid-Range</span>
+          <span style="color:var(--gold);font-weight:600;">$150</span>
+          <span id="inv-mid_range">Loading...</span>
+          <input type="number" id="qty-mid_range" class="buy-qty-input" min="1" max="999" value="1" style="width:60px;">
+          <button class="buy-btn" data-tier="mid_range" data-price="150" style="padding:6px 12px;font-size:13px;">Buy →</button>
+        </div>
+        <div class="pc-row">
+          <span>Premium</span>
+          <span style="color:var(--gold);font-weight:600;">$175</span>
+          <span id="inv-premium">Loading...</span>
+          <input type="number" id="qty-premium" class="buy-qty-input" min="1" max="999" value="1" style="width:60px;">
+          <button class="buy-btn" data-tier="premium" data-price="175" style="padding:6px 12px;font-size:13px;">Buy →</button>
+        </div>
+        <div class="pc-row">
+          <span>High-Ticket</span>
+          <span style="color:var(--gold);font-weight:600;">$190</span>
+          <span id="inv-high_ticket">Loading...</span>
+          <input type="number" id="qty-high_ticket" class="buy-qty-input" min="1" max="999" value="1" style="width:60px;">
+          <button class="buy-btn" data-tier="high_ticket" data-price="190" style="padding:6px 12px;font-size:13px;">Buy →</button>
+        </div>
+        <div class="pc-row" style="background-color:rgba(74,222,128,0.05);border-left:2px solid var(--green);">
+          <span style="color:var(--green);font-weight:600;">Class B</span>
+          <span style="color:var(--green);font-weight:600;">$20</span>
+          <span id="inv-class_b" style="color:var(--green);">Loading...</span>
+          <input type="number" id="qty-class_b" class="buy-qty-input" min="1" max="999" value="1" style="width:60px;">
+          <button class="buy-btn" data-tier="class_b" data-price="20" style="padding:6px 12px;font-size:13px;color:var(--green);border-color:var(--green);">Buy →</button>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;margin-bottom:12px;">
+        <div>
+          <label for="buy-email" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px;">Your Email</label>
+          <input type="email" id="buy-email" placeholder="you@company.com" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:4px;font-size:14px;">
+        </div>
+      </div>
+
+      <div id="buy-status" style="font-size:13px;min-height:20px;margin-bottom:8px;"></div>
     </div>
   </section>
 
-  <section class="section--sm" style="padding-top:0;padding-bottom:12px;text-align:center;">
-    <a href="/contact" class="hero-cta" style="display:inline-flex;">Start Getting Leads →</a>
+  <!-- HOW IT WORKS -->
+  <section class="section--sm" style="padding-top:0;">
+    <h3 style="text-align:center;margin-bottom:32px;font-family:var(--font-display);font-weight:700;font-size:1.875rem;color:var(--text);">How It Works</h3>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-num">01</div>
+        <h4 style="font-weight:700;margin-top:12px;margin-bottom:8px;">Homeowner Submits Request</h4>
+        <p style="font-size:15px;line-height:1.6;color:var(--text-secondary);">A homeowner fills out an estimate request for their project. Our system captures their name, contact info, job description, and location.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-num">02</div>
+        <h4 style="font-weight:700;margin-top:12px;margin-bottom:8px;">AI Classifies &amp; Scores</h4>
+        <p style="font-size:15px;line-height:1.6;color:var(--text-secondary);">Our AI engine evaluates the job type, estimates the value, and assigns it to the right pricing tier automatically.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-num">03</div>
+        <h4 style="font-weight:700;margin-top:12px;margin-bottom:8px;">Exclusivity Window Opens</h4>
+        <p style="font-size:15px;line-height:1.6;color:var(--text-secondary);">The lead enters a timed exclusivity window. Only a small number of contractors (max 3) receive each lead, so you're not competing with dozens of bids.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-num">04</div>
+        <h4 style="font-weight:700;margin-top:12px;margin-bottom:8px;">Lead Delivered to You</h4>
+        <p style="font-size:15px;line-height:1.6;color:var(--text-secondary);">You receive the full lead with homeowner contact info, job details, and estimated value. Billed per lead through Stripe — no surprises.</p>
+      </div>
+
+    </div>
   </section>
 
-</div>
+  <!-- WHAT'S INCLUDED -->
+  <section class="section--sm" style="padding-top:0;">
+    <div class="card">
+      <h3 style="margin-bottom:16px;">What's Included in Every Lead</h3>
+      <div class="pricing-list">
+        <span>Verified homeowner name, email, and phone</span>
+        <span>Job description with estimated project value</span>
+        <span>Territory exclusivity — max 3 contractors per lead</span>
+        <span>No monthly minimums or contracts</span>
+        <span>Direct Stripe billing per delivery</span>
+        <span>Class B discount on leads older than 7 days</span>
+        <span>CAN-SPAM compliant, 45-day data wipe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CROSS-SELL TO DASHBOARDS -->
+  <section class="section">
+    <p class="section-label">GO FURTHER</p>
+    <h2 class="section-title">Run Your Whole Business, Not Just Leads</h2>
+    <p class="section-desc">Pair your leads with a full Granite dashboard — scheduling, estimates, invoicing, crew management, and AI built in.</p>
+
+    <div class="card-grid" style="margin-top:32px;">
+
+      <div class="card">
+        <h4 style="font-weight:700;margin-bottom:8px;">Granite Trades Platform</h4>
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">$999 setup + $600/mo</div>
+        <div class="pricing-list" style="margin-bottom:16px;">
+          <span>Full dashboard, AI, QuickBooks, Excel</span>
+          <span>No per-user fees</span>
+        </div>
+        <a href="/pricing" class="card-link">See Pricing →</a>
+      </div>
+
+      <div class="card" style="border-left:2px solid var(--gold);">
+        <div style="display:inline-block;margin-bottom:12px;">
+          <span class="badge badge--production">MOST POPULAR</span>
+        </div>
+        <h4 style="font-weight:700;margin-bottom:8px;">Granite Pro</h4>
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">$999 setup + $800/mo</div>
+        <div class="pricing-list" style="margin-bottom:16px;">
+          <span>Everything in Trades, plus:</span>
+          <span>4 quality leads + 6 Class B leads/week</span>
+          <span>Mon & Wed delivery included</span>
+        </div>
+        <a href="/pricing" class="card-link">See Pricing →</a>
+      </div>
+
+      <div class="card">
+        <h4 style="font-weight:700;margin-bottom:8px;">Developer Templates</h4>
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">From $250</div>
+        <div class="pricing-list" style="margin-bottom:16px;">
+          <span>Pre-built dashboards</span>
+          <span>Source code, build it your way</span>
+        </div>
+        <a href="/pricing" class="card-link">View Templates →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GET STARTED FORM -->
+  <section class="section" id="get-started">
+    <p class="section-label">GET STARTED</p>
+    <h2 class="section-title">Ready to Get Leads?</h2>
+    <p class="section-desc">Tell us about your business and service area. Jon will follow up within 24 hours.</p>
+
+    {% if success %}
+    <div class="card" style="max-width:500px;text-align:center;">
+      <div style="font-size:2.5rem;color:var(--green);margin-bottom:12px;">&#10003;</div>
+      <h3>Message Sent!</h3>
+      <p>Jon will review your request and get back to you within 24 hours.</p>
+    </div>
+    {% else %}
+    <div style="max-width:600px;">
+      <form method="POST" action="/leads" class="pricing-form">
+        <div class="pf-row">
+          <div class="pf-field"><label>Your Name *</label><input type="text" name="name" required placeholder="John Smith"></div>
+          <div class="pf-field"><label>Business Name</label><input type="text" name="business" placeholder="Smith HVAC LLC"></div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="john@smithhvac.com"></div>
+          <div class="pf-field"><label>Phone</label><input type="tel" name="phone" placeholder="(555) 555-5555"></div>
+        </div>
+        <div class="pf-row">
+          <div class="pf-field"><label>Trade</label>
+            <select name="trade"><option value="">Select...</option><option value="hvac">HVAC</option><option value="plumbing">Plumbing</option><option value="landscaping">Landscaping</option><option value="construction">Construction</option><option value="electrical">Electrical</option><option value="roofing">Roofing</option><option value="auto">Mechanic / Auto</option><option value="steel">Steel Fabrication</option><option value="winter">Snow / Winter</option><option value="other">Other</option></select>
+          </div>
+          <div class="pf-field"><label>Service Area</label><input type="text" name="area" placeholder="City, state or zip code"></div>
+        </div>
+        <div class="pf-field"><label>What types of jobs are you looking for?</label><textarea name="message" rows="3" placeholder="e.g., $5K-$10K HVAC replacements, bathroom remodels, deck builds..."></textarea></div>
+        <button type="submit" class="hero-cta" style="width:100%;justify-content:center;margin-top:8px;">Get Started →</button>
+      </form>
+    </div>
+    {% endif %}
+  </section>
+
+</div><!-- .container -->
+
+<script>
+(function() {
+  'use strict';
+
+  const LEADS_API_BASE = window.LEADS_API_BASE || 'https://leads.granitemodels.store';
+
+  const tiers = [
+    { value: 'maintenance', invId: 'inv-maintenance', qtyId: 'qty-maintenance' },
+    { value: 'small_project', invId: 'inv-small_project', qtyId: 'qty-small_project' },
+    { value: 'mid_range', invId: 'inv-mid_range', qtyId: 'qty-mid_range' },
+    { value: 'premium', invId: 'inv-premium', qtyId: 'qty-premium' },
+    { value: 'high_ticket', invId: 'inv-high_ticket', qtyId: 'qty-high_ticket' },
+    { value: 'class_b', invId: 'inv-class_b', qtyId: 'qty-class_b' }
+  ];
+
+  window.addEventListener('DOMContentLoaded', function() {
+    fetchInventory();
+    attachBuyButtons();
+  });
+
+  function fetchInventory() {
+    fetch(LEADS_API_BASE + '/api/public/inventory', {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'omit'
+    })
+    .then(res => res.json())
+    .then(data => {
+      const inv = (data && data.inventory) ? data.inventory : data;
+      if (inv && typeof inv === 'object') {
+        tiers.forEach(tier => {
+          const count = inv[tier.value] !== undefined ? inv[tier.value] : 0;
+          const invEl = document.getElementById(tier.invId);
+          const qtyEl = document.getElementById(tier.qtyId);
+          const btnEl = document.querySelector(`.buy-btn[data-tier="${tier.value}"]`);
+
+          if (invEl) {
+            invEl.textContent = count;
+          }
+          if (qtyEl) {
+            qtyEl.max = Math.max(1, count);
+          }
+          if (btnEl) {
+            if (count === 0) {
+              btnEl.disabled = true;
+              btnEl.style.opacity = '0.5';
+              btnEl.style.cursor = 'not-allowed';
+              btnEl.textContent = 'Sold Out';
+            }
+          }
+        });
+      }
+    })
+    .catch(err => {
+      console.error('Inventory fetch failed:', err);
+      tiers.forEach(tier => {
+        const invEl = document.getElementById(tier.invId);
+        if (invEl) invEl.textContent = '—';
+      });
+    });
+  }
+
+  function attachBuyButtons() {
+    const buttons = document.querySelectorAll('.buy-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', handleBuy);
+    });
+  }
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function handleBuy(event) {
+    event.preventDefault();
+    const btn = event.target;
+    const tier = btn.getAttribute('data-tier');
+    const emailEl = document.getElementById('buy-email');
+    const qtyEl = document.getElementById(`qty-${tier}`);
+    const statusEl = document.getElementById('buy-status');
+    const invEl = document.getElementById(`inv-${tier}`);
+
+    const email = emailEl.value.trim();
+    const qty = parseInt(qtyEl.value) || 1;
+    const available = parseInt(invEl.textContent) || 0;
+
+    if (!email || !validateEmail(email)) {
+      statusEl.innerHTML = '<span style="color:#ef4444;">Please enter a valid email address.</span>';
+      return;
+    }
+
+    let finalQty = qty;
+    if (finalQty > available) {
+      finalQty = available;
+      statusEl.innerHTML = `<span style="color:#f59e0b;">Adjusted to ${finalQty} available lead(s).</span>`;
+    } else {
+      statusEl.innerHTML = '';
+    }
+
+    if (finalQty < 1) {
+      statusEl.innerHTML = '<span style="color:#ef4444;">No leads available for this tier.</span>';
+      return;
+    }
+
+    const payload = {
+      email: email,
+      tier: tier,
+      quantity: finalQty
+    };
+
+    fetch(LEADS_API_BASE + '/api/public/checkout', {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.checkout_url) {
+        window.location = data.checkout_url;
+      } else if (data.error) {
+        statusEl.innerHTML = `<span style="color:#ef4444;">${data.error}</span>`;
+      } else {
+        statusEl.innerHTML = '<span style="color:#ef4444;">Checkout failed. Please try again.</span>';
+      }
+    })
+    .catch(err => {
+      console.error('Checkout error:', err);
+      statusEl.innerHTML = '<span style="color:#ef4444;">Connection error. Please try again.</span>';
+    });
+  }
+
+})();
+</script>
+
 {% endblock %}
